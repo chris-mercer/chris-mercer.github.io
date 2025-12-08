@@ -1,0 +1,234 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --text-color: #333;
+    --light-gray: #ecf0f1;
+    --border-color: #bdc3c7;
+    --white: #ffffff;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 3rem 0 4rem;
+    border-bottom: 2px solid var(--light-gray);
+    margin-bottom: 3rem;
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.title {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    font-weight: 400;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.section-content {
+    color: var(--text-color);
+}
+
+/* Experience Section */
+.experience-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.experience-item:last-child {
+    border-bottom: none;
+}
+
+.job-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.company {
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+}
+
+.date {
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.75rem;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Projects Section */
+.project-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.project-item:last-child {
+    border-bottom: none;
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.project-link:hover {
+    color: var(--primary-color);
+}
+
+/* Contact Section */
+.contact-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem 0 1rem;
+    margin-top: 3rem;
+    border-top: 1px solid var(--light-gray);
+    color: var(--secondary-color);
+    font-size: 0.875rem;
+}
+
+/* Placeholder Text */
+.placeholder-text {
+    color: var(--secondary-color);
+    font-style: italic;
+    line-height: 1.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    .header {
+        padding: 2rem 0 3rem;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .section {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .contact-links {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .name {
+        font-size: 1.75rem;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
