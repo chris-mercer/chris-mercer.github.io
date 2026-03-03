@@ -307,20 +307,80 @@
       transition: border-color 0.2s ease;
     }
 
-    .content-block-title {
+    .content-block summary {
       font-size: 0.875rem;
       font-weight: 600;
       color: var(--text);
-      margin-bottom: 0.5rem;
-      transition: color 0.2s ease;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: color 0.15s ease;
     }
+
+    .content-block summary::-webkit-details-marker { display: none; }
+
+    .content-block summary::after {
+      content: '+';
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      margin-left: 1rem;
+      transition: color 0.15s ease;
+    }
+
+    .content-block[open] summary::after { content: '\2212'; }
+
+    .content-block summary:hover { color: var(--accent); }
+    .content-block summary:hover::after { color: var(--accent); }
 
     .content-block-text {
       font-size: 0.875rem;
       line-height: 1.7;
       color: var(--text-secondary);
+      margin-top: 0.75rem;
       transition: color 0.2s ease;
     }
+
+    /* ── Collapsible Methodology ── */
+    .methodology-details { padding: 2.5rem 3rem; }
+
+    .surface-section + .methodology-details,
+    .methodology-details + .surface-section {
+      border-top: 1px solid var(--border);
+      transition: border-color 0.2s ease;
+    }
+
+    .methodology-details summary {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: color 0.15s ease;
+    }
+
+    .methodology-details summary::-webkit-details-marker { display: none; }
+
+    .methodology-details summary::after {
+      content: '+';
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      margin-left: 1rem;
+      transition: color 0.15s ease;
+    }
+
+    .methodology-details[open] summary::after { content: '\2212'; }
+
+    .methodology-details summary:hover { color: var(--accent); }
+    .methodology-details summary:hover::after { color: var(--accent); }
 
     .methodology-text {
       font-size: 0.875rem;
@@ -329,6 +389,7 @@
       transition: color 0.2s ease;
     }
 
+    .methodology-details .methodology-text:first-of-type { margin-top: 1.25rem; }
     .methodology-text + .methodology-text { margin-top: 1rem; }
 
     /* ── Contact Section ── */
@@ -400,6 +461,7 @@
       .tags { justify-content: center; }
 
       .theme-toggle { top: 0.75rem; right: 0.75rem; width: 36px; height: 36px; font-size: 1rem; }
+      .methodology-details { padding: 2rem 1.5rem; }
     }
   </style>
 </head>
@@ -432,29 +494,29 @@
 
     <section class="surface-section">
       <h2 class="section-title">What I Design & Build</h2>
-      <div class="content-block">
-        <h3 class="content-block-title">Protocol Engineering</h3>
+      <details class="content-block">
+        <summary>Protocol Engineering</summary>
         <p class="content-block-text">I design and implement consensus-layer upgrades across multiple blockchain clients written in different languages — Go, JVM/Scala, and Java. This includes integrating execution-layer proposals spanning dynamic fee markets, account abstraction, and transient storage, then coordinating cross-client interoperability testing on live testnets. I run and operate full nodes across all three client implementations. The core engineering challenge is ensuring behavioral equivalence across fundamentally different codebases while maintaining each client's architectural integrity.</p>
-      </div>
-      <div class="content-block">
-        <h3 class="content-block-title">Governance & Custody Systems</h3>
+      </details>
+      <details class="content-block">
+        <summary>Governance & Custody Systems</summary>
         <p class="content-block-text">I architect governance and custody infrastructure for institutional blockchain environments — from non-transferable credential-based voting to DAO frameworks to advanced prediction-market-based decision mechanisms. This includes on-chain treasury systems with custody isolation, separation-of-duties enforcement, and auditable execution pipelines. Alongside governance, I design on-chain identity registries, decentralized exchange protocol architecture, and token launch platforms. Every system is backed by rigorous formal verification: fuzz testing, invariant checks, and security proofs, with individual contract systems exceeding a thousand tests.</p>
-      </div>
-      <div class="content-block">
-        <h3 class="content-block-title">Smart Contracts & Tokenization</h3>
+      </details>
+      <details class="content-block">
+        <summary>Smart Contracts & Tokenization</summary>
         <p class="content-block-text">I design and deploy smart contract systems spanning token standards (ERC-20, ERC-721, ERC-1400), tokenization workflows, and DeFi primitives including staking, liquidity provisioning, and lending protocols. The same architect who writes the contracts also builds the TypeScript interfaces, on-chain analytics dashboards, and product experiences that sit on top — from contract architecture through user interaction with no handoff gap. Full-stack delivery from Solidity to production interface.</p>
-      </div>
-      <div class="content-block">
-        <h3 class="content-block-title">Data Architecture & Infrastructure</h3>
+      </details>
+      <details class="content-block">
+        <summary>Data Architecture & Infrastructure</summary>
         <p class="content-block-text">I design pipelines that process over a billion records across multiple large-scale datasets. This involves performance-engineering storage layers to achieve order-of-magnitude throughput improvements, building multi-pass enrichment architectures, and constructing full-text search infrastructure that serves complex queries across millions of documents. The same systems thinking that governs protocol design also produces high-performance data systems.</p>
-      </div>
+      </details>
     </section>
 
-    <section class="surface-section">
-      <h2 class="section-title">How I Work</h2>
+    <details class="methodology-details">
+      <summary>How I Work</summary>
       <p class="methodology-text">Phase-based delivery with formal handoff documentation at each stage. Every project is decomposed into numbered phases with explicit scope, testing, and verification gates. Cross-functional coordination across multi-client, multi-language environments — aligning protocol design decisions with smart contract implementation and frontend delivery.</p>
       <p class="methodology-text">Security-first methodology: adversarial modeling, formal verification, and fuzz testing are standard practice — not afterthoughts. Traditional finance discipline applied to blockchain engineering: custody isolation, separation of duties, auditability. I build systematic development infrastructure that lets me maintain genuine architectural depth across protocol engineering, smart contracts, and data systems simultaneously.</p>
-    </section>
+    </details>
 
     <section class="surface-section contact">
       <h2 class="section-title">Get in Touch</h2>
