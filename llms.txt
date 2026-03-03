@@ -1,0 +1,25 @@
+# Christopher Mercer
+
+> Systems engineer at the confluence of finance, blockchain, and AI.
+
+## About
+
+Christopher Mercer is a systems engineer building protocol infrastructure and AI-augmented development workflows. He merges a financial background with distributed systems engineering, focusing on governance systems, DeFi architecture, and agentic integration.
+
+## Focus Areas
+
+- Protocol Infrastructure
+- DeFi Architecture
+- Agentic Workflows
+- Open-Source Tooling
+
+## Links
+
+- Website: https://christophermercer.org
+- GitHub: https://github.com/chris-mercer
+- LinkedIn: https://linkedin.com/in/c-mercer
+- whiteb0x: https://whiteb0x.com
+
+## Contact
+
+- Email: contact@whiteb0x.com
