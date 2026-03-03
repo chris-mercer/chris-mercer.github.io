@@ -1,37 +1,37 @@
 # Christopher Mercer
 
-> Systems architect designing and shipping blockchain protocol infrastructure, governance systems, and large-scale data pipelines.
+> Systems architect designing institutional-grade blockchain infrastructure across multiple protocols. Multi-client protocol engineering, smart contracts, tokenization, governance and custody architecture, formal verification.
 
 ## About
 
-Christopher Mercer is a systems architect who designs complex infrastructure across blockchain protocols, governance frameworks, DeFi, and large-scale data systems. He works across the full vertical — from consensus-layer protocol design to smart contracts, interfaces, and data pipelines — designing and personally shipping end to end. Traditional finance background with a systems engineering discipline applied to everything.
+Christopher Mercer is a systems architect who designs institutional-grade blockchain infrastructure across multiple protocol families and client implementations. He works across the full vertical — from consensus-layer protocol design and cryptographic security through smart contracts, tokenization workflows, governance systems, and the interfaces that sit on top. Traditional finance background applied to blockchain systems engineering.
 
 ## What He Designs & Builds
 
-### Protocol Architecture
-Designs and implements consensus-layer upgrades across multiple blockchain clients written in different languages (Go, JVM/Scala, Java). Integrates execution-layer proposals spanning dynamic fee markets, account abstraction, and transient storage. Coordinates cross-client validation on live testnets.
+### Protocol Engineering
+Designs and implements consensus-layer upgrades across multiple blockchain clients written in different languages (Go, JVM/Scala, Java). Integrates execution-layer proposals spanning dynamic fee markets, account abstraction, and transient storage. Coordinates cross-client interoperability testing on live testnets. Operates full nodes across multiple client implementations.
 
-### Governance & Smart Contract Systems
-Architects governance systems from soulbound NFT-based voting to DAO frameworks to prediction-market futarchy using logarithmic scoring AMMs. Designs name service registries, DEX infrastructure, and token launch platforms. Rigorous formal testing — fuzz, invariant, security proofs.
+### Governance & Custody Systems
+Architects governance and custody infrastructure for institutional blockchain environments — from non-transferable credential-based voting to DAO frameworks to prediction-market-based decision mechanisms. On-chain treasury systems with custody isolation, separation-of-duties enforcement, and auditable execution pipelines. Designs on-chain identity registries, decentralized exchange protocol architecture, and token launch platforms. Rigorous formal verification — fuzz testing, invariant checks, security proofs.
 
-### Full-Stack Web3 Interfaces
-Designs contracts and builds the interfaces. TypeScript, React, wagmi/viem, WebGL, on-chain analytics dashboards. Single architect across the entire stack — no handoff between contract design and user experience.
+### Smart Contracts & Tokenization
+Designs and deploys smart contract systems spanning token standards (ERC-20, ERC-721, ERC-1400), tokenization workflows, and DeFi primitives including staking, liquidity provisioning, and lending protocols. Full-stack delivery from Solidity to production interface.
 
-### Data Architecture
-Designs pipelines processing over a billion records. Performance-engineered storage with order-of-magnitude throughput improvements. Multi-pass LLM enrichment. Full-text search infrastructure across millions of documents.
+### Data Architecture & Infrastructure
+Designs pipelines processing over a billion records. Performance-engineered storage with order-of-magnitude throughput improvements. Multi-pass enrichment architectures. Full-text search infrastructure across millions of documents.
 
 ## How He Works
 
-Built AI-augmented development infrastructure — custom agentic workflows with model routing by task complexity, automated quality enforcement, zero-marginal-cost mechanical automation. Systems architecture applied to the development process itself.
+Phase-based delivery with formal handoff documentation. Cross-functional coordination across multi-client, multi-language environments. Security-first methodology: adversarial modeling, formal verification, and fuzz testing as standard practice. Traditional finance discipline applied to blockchain engineering — custody isolation, separation of duties, auditability.
 
 ## Focus Areas
 
-- Protocol Architecture
-- Smart Contract Systems
-- Governance Design
-- Full-Stack Web3
-- Data Infrastructure
-- AI-Augmented Development
+- Protocol Engineering
+- Smart Contracts & Tokenization
+- Governance & Custody Architecture
+- Multi-Client Infrastructure
+- Security & Formal Verification
+- Data Systems
 
 ## Links
 
