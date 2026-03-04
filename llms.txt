@@ -4,7 +4,7 @@
 
 ## About
 
-Christopher Mercer is a systems architect who designs institutional-grade blockchain infrastructure across multiple protocol families and client implementations. He works across the full vertical — from consensus-layer protocol design and cryptographic security through smart contracts, tokenization workflows, governance systems, and the interfaces that sit on top. Traditional finance background applied to blockchain systems engineering.
+Christopher Mercer is a systems architect who designs institutional-grade blockchain infrastructure across multiple protocol families and client implementations. He works across the full vertical - from consensus-layer protocol design and cryptographic security through smart contracts, tokenization workflows, governance systems, and the interfaces that sit on top. Traditional finance background applied to blockchain systems engineering.
 
 ## What He Designs & Builds
 
@@ -12,7 +12,7 @@ Christopher Mercer is a systems architect who designs institutional-grade blockc
 Designs and implements consensus-layer upgrades across multiple blockchain clients written in different languages (Go, JVM/Scala, Java). Integrates execution-layer proposals spanning dynamic fee markets, account abstraction, and transient storage. Coordinates cross-client interoperability testing on live testnets. Operates full nodes across multiple client implementations.
 
 ### Governance & Custody Systems
-Architects governance and custody infrastructure for institutional blockchain environments — from non-transferable credential-based voting to DAO frameworks to prediction-market-based decision mechanisms. On-chain treasury systems with custody isolation, separation-of-duties enforcement, and auditable execution pipelines. Designs on-chain identity registries, decentralized exchange protocol architecture, and token launch platforms. Rigorous formal verification — fuzz testing, invariant checks, security proofs.
+Architects governance and custody infrastructure for institutional blockchain environments - from non-transferable credential-based voting to DAO frameworks to prediction-market-based decision mechanisms. On-chain treasury systems with custody isolation, separation-of-duties enforcement, and auditable execution pipelines. Designs on-chain identity registries, decentralized exchange protocol architecture, and token launch platforms. Rigorous formal verification - fuzz testing, invariant checks, security proofs.
 
 ### Smart Contracts & Tokenization
 Designs and deploys smart contract systems spanning token standards (ERC-20, ERC-721, ERC-1400), tokenization workflows, and DeFi primitives including staking, liquidity provisioning, and lending protocols. Full-stack delivery from Solidity to production interface.
@@ -22,7 +22,7 @@ Designs pipelines processing over a billion records. Performance-engineered stor
 
 ## How He Works
 
-Phase-based delivery with formal handoff documentation. Cross-functional coordination across multi-client, multi-language environments. Security-first methodology: adversarial modeling, formal verification, and fuzz testing as standard practice. Traditional finance discipline applied to blockchain engineering — custody isolation, separation of duties, auditability.
+Phase-based delivery with formal handoff documentation. Cross-functional coordination across multi-client, multi-language environments. Security-first methodology: adversarial modeling, formal verification, and fuzz testing as standard practice. Traditional finance discipline applied to blockchain engineering - custody isolation, separation of duties, auditability.
 
 ## Focus Areas
 
@@ -42,4 +42,4 @@ Phase-based delivery with formal handoff documentation. Cross-functional coordin
 
 ## Contact
 
-- Email: contact@whiteb0x.com
+- Email: contact@christophermercer.org
