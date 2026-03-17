@@ -1,1 +1,1 @@
-# chirs-mercer.github.io
+# chris-mercer.github.io
