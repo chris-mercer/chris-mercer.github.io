@@ -1,1 +1,14 @@
-# chris-mercer.github.io
+### Christopher Mercer
+
+I design institutional-grade digital asset infrastructure across multiple protocol families and client implementations. My work spans the full vertical — from consensus-layer protocol design through smart contracts, tokenization, governance systems, and the product interfaces that sit on top. I see the whole problem before I write the first line of code, then I ship it — coordinating across independent engineering teams or leading a small one directly.
+
+Traditional finance background applied to blockchain systems engineering. Regulatory awareness — stablecoin reserve custody, digital commodity classification under emerging frameworks like the GENIUS and CLARITY Acts — alongside formal security practices: fuzz testing, invariant verification, adversarial modeling. Institutional thinking runs through everything I build: custody isolation, separation of duties, auditable governance pipelines.
+
+**What I Design & Build:**
+
+- **Protocol Engineering** — Consensus-layer upgrades across multiple blockchain clients in multiple languages (Go, JVM/Scala, Java). Multi-client hard fork coordination, specification-level bug discovery through cross-client analysis, live testnet validation. Cross-client interoperability testing and full node operation across all implementations.
+- **Governance & Treasury Architecture** — Governance and custody infrastructure for institutional digital asset environments — from non-transferable credential-based voting to DAO frameworks to prediction-market-based decision mechanisms. On-chain treasury systems with custody isolation, separation-of-duties enforcement, and auditable execution pipelines. Regulatory infrastructure: stablecoin reserve custody workflows, compliance pipelines aligned with GENIUS and CLARITY Act frameworks. Rigorous formal verification at scale.
+- **Smart Contracts & Tokenization** — Token standards (ERC-20, ERC-721, ERC-1400), tokenization workflows, and DeFi primitives — lending markets, oracle integration, liquidity provisioning, prediction markets, stablecoin infrastructure. Large-scale digital asset treasury operations, trading infrastructure, liquidity routing, and settlement. The same architect who writes the contracts also builds the TypeScript interfaces and product experiences — from contract architecture through user interaction with no handoff gap.
+- **Data Architecture & Infrastructure** — Pipelines processing over a billion records across multiple large-scale datasets. Performance-engineered storage with order-of-magnitude throughput improvements. Multi-pass enrichment architectures and full-text search infrastructure serving complex queries across millions of documents.
+
+[christophermercer.org](https://christophermercer.org) · [linkedin](https://linkedin.com/in/c-mercer) · [whiteb0x](https://whiteb0x.com)

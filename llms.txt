@@ -1,37 +1,39 @@
 # Christopher Mercer
 
-> Systems architect designing institutional-grade blockchain infrastructure across multiple protocols. Multi-client protocol engineering, smart contracts, tokenization, governance and custody architecture, formal verification.
+> Systems architect designing institutional-grade digital asset infrastructure. Protocol engineering, smart contracts, tokenization, governance, custody architecture, regulatory compliance, and formal verification.
 
 ## About
 
-Christopher Mercer is a systems architect who designs institutional-grade blockchain infrastructure across multiple protocol families and client implementations. He works across the full vertical - from consensus-layer protocol design and cryptographic security through smart contracts, tokenization workflows, governance systems, and the interfaces that sit on top. Traditional finance background applied to blockchain systems engineering.
+Christopher Mercer is a systems architect who designs institutional-grade digital asset infrastructure across multiple protocol families and client implementations. He works across the full vertical - from consensus-layer protocol design through smart contracts, tokenization, governance systems, and the product interfaces that sit on top. He sees the whole problem before writing the first line of code, then ships it - coordinating across independent engineering teams or leading a small one directly. Traditional finance background applied to blockchain systems engineering.
 
 ## What He Designs & Builds
 
 ### Protocol Engineering
-Designs and implements consensus-layer upgrades across multiple blockchain clients written in different languages (Go, JVM/Scala, Java). Integrates execution-layer proposals spanning dynamic fee markets, account abstraction, and transient storage. Coordinates cross-client interoperability testing on live testnets. Operates full nodes across multiple client implementations.
+Designs and implements consensus-layer upgrades across multiple blockchain clients written in different languages (Go, JVM/Scala, Java). Has coordinated a multi-client hard fork integrating over a dozen EIPs and ECIPs, discovering specification-level bugs through cross-client analysis that would have caused consensus failures in production. Runs full nodes across all client implementations and builds cross-client validation infrastructure to prove behavioral equivalence across fundamentally different codebases. The work is as much about coordinating across independent engineering teams as it is about writing code.
 
-### Governance & Custody Systems
-Architects governance and custody infrastructure for institutional blockchain environments - from non-transferable credential-based voting to DAO frameworks to prediction-market-based decision mechanisms. On-chain treasury systems with custody isolation, separation-of-duties enforcement, and auditable execution pipelines. Designs on-chain identity registries, decentralized exchange protocol architecture, and token launch platforms. Rigorous formal verification - fuzz testing, invariant checks, security proofs.
+### Governance & Treasury Architecture
+Architects governance and custody infrastructure for institutional digital asset environments - from non-transferable credential-based voting to DAO frameworks to prediction-market-based decision mechanisms. On-chain treasury systems managing significant assets with custody isolation, separation-of-duties enforcement, and auditable execution pipelines. Designs the regulatory infrastructure layer: stablecoin reserve custody workflows, compliance pipelines aligned with emerging frameworks like the GENIUS and CLARITY Acts, and freeze-seize controls for OCC-regulated environments. Every system backed by rigorous formal verification, with individual contract systems carrying hundreds to over a thousand tests.
 
 ### Smart Contracts & Tokenization
-Designs and deploys smart contract systems spanning token standards (ERC-20, ERC-721, ERC-1400), tokenization workflows, and DeFi primitives including staking, liquidity provisioning, and lending protocols. Full-stack delivery from Solidity to production interface.
+Designs and deploys smart contract systems spanning token standards (ERC-20, ERC-721, ERC-1400), tokenization workflows, and DeFi primitives - lending markets, oracle integration, liquidity provisioning, prediction markets, and stablecoin infrastructure. Has managed large-scale digital asset treasury operations and built the trading infrastructure around them: liquidity routing, settlement, and analytics across dozens of tokens. Full-stack delivery from Solidity to production interface.
 
 ### Data Architecture & Infrastructure
 Designs pipelines processing over a billion records. Performance-engineered storage with order-of-magnitude throughput improvements. Multi-pass enrichment architectures. Full-text search infrastructure across millions of documents.
 
 ## How He Works
 
-Phase-based delivery with formal handoff documentation. Cross-functional coordination across multi-client, multi-language environments. Security-first methodology: adversarial modeling, formal verification, and fuzz testing as standard practice. Traditional finance discipline applied to blockchain engineering - custody isolation, separation of duties, auditability.
+Sees the whole system before building it. Phase-based delivery with formal handoff documentation at each stage. Coordinates across multi-client, multi-language environments, aligning protocol design decisions with smart contract implementation and product delivery. Whether leading a small team or shipping solo, the approach is the same: architecture first, then execution.
+
+Security and regulatory awareness built into the process, not bolted on afterward. Adversarial modeling, formal verification, and fuzz testing as standard practice. Traditional finance discipline applied to digital asset engineering: custody isolation, separation of duties, auditability, and compliance readiness for institutional and regulated environments.
 
 ## Focus Areas
 
 - Protocol Engineering
+- Institutional Digital Assets
+- Governance & Treasury Architecture
+- Regulatory Infrastructure
 - Smart Contracts & Tokenization
-- Governance & Custody Architecture
-- Multi-Client Infrastructure
 - Security & Formal Verification
-- Data Systems
 
 ## Links
 
