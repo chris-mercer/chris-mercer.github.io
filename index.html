@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Christopher Mercer - Systems architect designing institutional-grade digital asset infrastructure. Protocol engineering, smart contracts, tokenization, governance, custody architecture, regulatory compliance, and formal verification.">
-  <title>Christopher Mercer - Systems Architect | Institutional Digital Assets | Protocol Infrastructure</title>
+  <meta name="description" content="Blockchain engineer and systems architect since 2013. Former ShapeShift treasury operations. Protocol engineering, smart contracts, governance, and institutional-grade digital asset infrastructure.">
+  <title>Christopher Mercer - Blockchain Engineer &amp; Systems Architect</title>
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -27,12 +27,12 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://christophermercer.org">
   <meta name="author" content="Christopher Mercer">
-  <meta name="keywords" content="systems architect, blockchain, protocol engineering, institutional digital assets, smart contracts, tokenization, governance, custody architecture, formal verification, regulatory infrastructure, stablecoin infrastructure, settlement, trading infrastructure, DeFi, GENIUS Act, CLARITY Act">
+  <meta name="keywords" content="blockchain engineer, systems architect, protocol engineering, institutional digital assets, smart contracts, tokenization, governance, custody architecture, formal verification, regulatory infrastructure, stablecoin, DeFi, Ethereum Classic, ETCswap, ShapeShift, GENIUS Act, CLARITY Act, treasury operations">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Christopher Mercer - Systems Architect | Institutional Digital Assets | Protocol Infrastructure">
-  <meta property="og:description" content="Systems architect designing institutional-grade digital asset infrastructure. Protocol engineering, smart contracts, tokenization, governance, custody architecture, regulatory compliance, and formal verification.">
+  <meta property="og:title" content="Christopher Mercer - Blockchain Engineer &amp; Systems Architect | Since 2013">
+  <meta property="og:description" content="Blockchain engineer and systems architect since 2013. Former ShapeShift treasury operations. Protocol engineering, smart contracts, governance, and institutional-grade digital asset infrastructure.">
   <meta property="og:url" content="https://christophermercer.org">
   <meta property="og:site_name" content="Christopher Mercer">
   <meta property="og:locale" content="en_US">
@@ -44,8 +44,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Christopher Mercer - Systems Architect | Institutional Digital Assets | Protocol Infrastructure">
-  <meta name="twitter:description" content="Systems architect designing institutional-grade digital asset infrastructure. Protocol engineering, smart contracts, tokenization, governance, custody architecture, regulatory compliance, and formal verification.">
+  <meta name="twitter:title" content="Christopher Mercer - Blockchain Engineer &amp; Systems Architect | Since 2013">
+  <meta name="twitter:description" content="Blockchain engineer and systems architect since 2013. Former ShapeShift treasury operations. Protocol engineering, smart contracts, governance, and institutional-grade digital asset infrastructure.">
   <meta name="twitter:image" content="https://christophermercer.org/og-image.png">
 
   <!-- JSON-LD -->
@@ -55,15 +55,18 @@
     "@type": "Person",
     "name": "Christopher Mercer",
     "url": "https://christophermercer.org",
-    "jobTitle": "Systems Architect - Institutional Digital Assets",
-    "description": "Systems architect designing institutional-grade digital asset infrastructure. Protocol engineering, smart contracts, tokenization, governance, custody architecture, regulatory compliance, and formal verification.",
+    "jobTitle": "Blockchain Engineer & Systems Architect",
+    "description": "Blockchain engineer and systems architect since 2013. Former ShapeShift treasury operations. Protocol engineering, smart contracts, governance, and institutional-grade digital asset infrastructure.",
     "sameAs": [
       "https://github.com/chris-mercer",
       "https://linkedin.com/in/c-mercer",
-      "https://whiteb0x.com"
+      "https://whiteb0x.com",
+      "https://olympiadao.org",
+      "https://etcswap.org",
+      "https://ethereumclassic.com"
     ],
     "email": "contact@christophermercer.org",
-    "knowsAbout": ["Protocol Engineering", "Institutional Digital Assets", "Smart Contract Design", "Tokenization", "Governance Architecture", "Custody Systems", "Regulatory Infrastructure", "Stablecoin Infrastructure", "Formal Verification", "DeFi Architecture", "Trading Infrastructure", "Settlement Systems", "Distributed Systems"]
+    "knowsAbout": ["Protocol Engineering", "Blockchain Infrastructure", "Smart Contract Design", "Tokenization", "Governance Architecture", "Custody Systems", "Regulatory Infrastructure", "Stablecoin Infrastructure", "Formal Verification", "DeFi Architecture", "Treasury Operations", "Settlement Systems", "Distributed Systems", "Ethereum Classic", "Digital Asset Infrastructure"]
   }
   </script>
 
@@ -273,7 +276,7 @@
       color: var(--text-muted);
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      white-space: nowrap;
+      overflow-wrap: break-word;
       margin-bottom: 1rem;
       transition: color 0.2s ease;
     }
@@ -489,6 +492,41 @@
       .theme-toggle { top: 0.75rem; right: 0.75rem; width: 36px; height: 36px; font-size: 1rem; }
       .methodology-details { padding: 2rem 1.5rem; }
     }
+    /* -- Selected Work -- */
+    .work-heading {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.375rem;
+      transition: color 0.2s ease;
+    }
+    .work-detail {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      letter-spacing: -0.01em;
+      color: var(--text-secondary);
+      transition: color 0.2s ease;
+    }
+    .work-links {
+      margin-top: 0.5rem;
+      font-size: 0.8125rem;
+    }
+    .work-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+    .work-links a:hover { color: var(--accent); }
+    .work-year {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.3px;
+      margin-bottom: 0.375rem;
+      transition: color 0.2s ease;
+    }
   </style>
   <!-- Cloudflare Web Analytics -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "436f0695eef84251ad68820649bd8530"}'></script>
@@ -505,9 +543,9 @@
         <a href="#contact" class="avatar-link"><img src="profile.jpeg" alt="Christopher Mercer" class="avatar"></a>
         <div class="hero-text">
           <h1 class="name">Christopher Mercer</h1>
-          <p class="role">Systems Architect | Institutional Digital Assets | Protocol Infrastructure</p>
-          <p class="bio">I design institutional-grade digital asset infrastructure across multiple protocol families and client implementations. My work spans the full vertical - from consensus-layer protocol design through smart contracts, tokenization, governance systems, and the product interfaces that sit on top. I see the whole problem before I write the first line of code, then I ship it - coordinating across independent engineering teams or leading a small one directly.</p>
-          <p class="bio">Traditional finance background applied to blockchain systems engineering. I bring regulatory awareness - stablecoin reserve custody, digital commodity classification under emerging frameworks like the GENIUS and CLARITY Acts - alongside formal security practices: fuzz testing, invariant verification, adversarial modeling. Institutional thinking runs through everything I build: custody isolation, separation of duties, auditable governance pipelines. This is what separates infrastructure designed for regulated environments from infrastructure that just works on a testnet.</p>
+          <p class="role">Systems Architect | Institutional Digital Assets<br>Protocol Infrastructure</p>
+          <p class="bio">Blockchain engineer and systems architect, building in the space since 2013. I started in treasury operations at ShapeShift — one of the first multi-chain exchange products in crypto — managing a $125M+ multi-asset portfolio across over a billion dollars in monthly transaction volume. That operational experience, grounded in a traditional finance background, shapes the infrastructure I design today.</p>
+          <p class="bio">My work spans the full vertical — from consensus-layer protocol design through smart contracts, tokenization, governance systems, and the product interfaces that sit on top. I see the whole problem before writing the first line of code, then I ship — coordinating across independent engineering teams or leading a small one directly. Regulatory awareness and institutional discipline are built in from the start: custody isolation, separation of duties, auditable governance pipelines.</p>
         </div>
       </div>
       <div class="tags">
@@ -524,26 +562,89 @@
       <h2 class="section-title">What I Design & Build</h2>
       <details class="content-block">
         <summary>Protocol Engineering</summary>
-        <p class="content-block-text">I design and implement consensus-layer upgrades across multiple blockchain clients written in different languages - Go, JVM/Scala, and Java. I've coordinated a multi-client hard fork integrating over a dozen EIPs and ECIPs, discovering specification-level bugs through cross-client analysis that would have caused consensus failures in production. I run full nodes across all client implementations and build the cross-client validation infrastructure to prove behavioral equivalence across fundamentally different codebases. The work is as much about coordinating across independent engineering teams as it is about writing code.</p>
+        <p class="content-block-text">I design and implement protocol-level upgrades across multiple blockchain clients written in different languages — Go, Scala, and Java. This means coordinating independent engineering teams, proving that fundamentally different implementations behave identically, and catching specification gaps before they reach production. I run full nodes across every client and align protocol design decisions with downstream contract and product delivery.</p>
       </details>
       <details class="content-block">
         <summary>Governance & Treasury Architecture</summary>
-        <p class="content-block-text">I architect governance and custody infrastructure for institutional digital asset environments - from non-transferable credential-based voting to DAO frameworks to prediction-market-based decision mechanisms. This includes on-chain treasury systems managing significant assets with custody isolation, separation-of-duties enforcement, and auditable execution pipelines. I also design the regulatory infrastructure layer: stablecoin reserve custody workflows, compliance pipelines aligned with emerging frameworks like the GENIUS and CLARITY Acts, and freeze-seize controls for OCC-regulated environments. Every system is backed by rigorous formal verification, with individual contract systems carrying hundreds to over a thousand tests.</p>
+        <p class="content-block-text">I architect governance and custody infrastructure for institutional digital asset environments — voting systems, treasury management frameworks, and structured decision-making mechanisms for decentralized organizations. This includes on-chain treasury systems with custody isolation, separation-of-duties enforcement, and auditable execution pipelines. I also design the regulatory infrastructure layer: stablecoin reserve custody workflows and compliance pipelines aligned with the GENIUS and CLARITY Act frameworks. Formal verification applied to the contracts that hold the money — rigorous security testing across every possible failure scenario.</p>
       </details>
       <details class="content-block">
         <summary>Smart Contracts & Tokenization</summary>
-        <p class="content-block-text">I design and deploy smart contract systems spanning token standards (ERC-20, ERC-721, ERC-1400), tokenization workflows, and DeFi primitives - lending markets, oracle integration, liquidity provisioning, prediction markets, and stablecoin infrastructure. I've managed large-scale digital asset treasury operations and built the trading infrastructure around them: liquidity routing, settlement, and analytics across dozens of tokens. The same architect who writes the contracts also builds the TypeScript interfaces and product experiences that sit on top - from contract architecture through user interaction with no handoff gap.</p>
+        <p class="content-block-text">I design and deploy smart contract systems spanning token issuance, tokenization workflows, and decentralized finance applications — lending markets, liquidity provision, prediction markets, and stablecoin infrastructure. I've managed large-scale digital asset treasury operations and built the trading infrastructure around them: liquidity routing, settlement, and portfolio analytics. The architect who writes the contracts also builds the interfaces — contract logic to user interaction with no handoff gap.</p>
       </details>
       <details class="content-block">
         <summary>Data Architecture & Infrastructure</summary>
-        <p class="content-block-text">I design pipelines that process over a billion records across multiple large-scale datasets. This involves performance-engineering storage layers to achieve order-of-magnitude throughput improvements, building multi-pass enrichment architectures, and constructing full-text search infrastructure that serves complex queries across millions of documents. The same systems thinking that governs protocol design also produces high-performance data systems.</p>
+        <p class="content-block-text">I design pipelines that process over a billion records across multiple large-scale datasets — performance-engineering storage layers for order-of-magnitude throughput gains, building data enrichment pipelines, and constructing full-text search infrastructure that serves complex queries across millions of documents.</p>
       </details>
+    </section>
+
+    <section class="surface-section">
+      <h2 class="section-title">Selected Work</h2>
+
+      <div class="content-block">
+        <p class="work-heading">Olympia</p>
+        <p class="work-year">Launched 2025</p>
+        <p class="work-detail">Lead architect of a protocol-level governance upgrade to Ethereum Classic. Olympia routes network-generated revenue to a community-controlled treasury and enables on-chain voting over how those funds are allocated, with compliance infrastructure designed for regulated environments. Deployed to testnet and mainnet.</p>
+        <p class="work-links">
+          <a href="https://olympiadao.org" target="_blank" rel="noopener noreferrer">olympiadao.org</a>
+          <span class="sep"> · </span>
+          <a href="https://olympiatreasury.org" target="_blank" rel="noopener noreferrer">olympiatreasury.org</a>
+          <span class="sep"> · </span>
+          <a href="https://ethereumclassicdao.org" target="_blank" rel="noopener noreferrer">ethereumclassicdao.org</a>
+        </p>
+      </div>
+
+      <div class="content-block">
+        <p class="work-heading">Classic USD</p>
+        <p class="work-year">Launched 2024</p>
+        <p class="work-detail">Primary organizer of Classic USD — a US-regulated, fiat-backed stablecoin for Ethereum Classic. Issued and redeemable 1:1 against USD reserves through a licensed US money transmitter, tradable on-chain.</p>
+        <p class="work-links">
+          <a href="https://classicusd.com" target="_blank" rel="noopener noreferrer">classicusd.com</a>
+        </p>
+      </div>
+
+      <div class="content-block">
+        <p class="work-heading">ETCswap</p>
+        <p class="work-year">V2 2022 · V3 &amp; Launchpad 2024</p>
+        <p class="work-detail">Founder of ETCswap — a decentralized exchange on Ethereum Classic. Two live protocol versions supporting token trading, liquidity provision, analytics, and a token launchpad.</p>
+        <p class="work-links">
+          <a href="https://etcswap.org" target="_blank" rel="noopener noreferrer">etcswap.org</a>
+        </p>
+      </div>
+
+      <div class="content-block">
+        <p class="work-heading">EthereumClassic.com</p>
+        <p class="work-year">Launched 2026</p>
+        <p class="work-detail">Architect of the Ethereum Classic consumer portal — covering wallets, exchanges, DeFi applications, mining, developer resources, and live market and network data.</p>
+        <p class="work-links">
+          <a href="https://ethereumclassic.com" target="_blank" rel="noopener noreferrer">ethereumclassic.com</a>
+        </p>
+      </div>
+
+      <div class="content-block">
+        <p class="work-heading">Fukuii</p>
+        <p class="work-year">Contributing since 2025</p>
+        <p class="work-detail">Contributor to Fukuii — an Ethereum Classic execution client written in Scala. Adding the state synchronization infrastructure that lets new nodes join the network without downloading full chain history.</p>
+        <p class="work-links">
+          <a href="https://github.com/chippr-robotics/fukuii" target="_blank" rel="noopener noreferrer">github.com/chippr-robotics/fukuii</a>
+        </p>
+      </div>
+
+      <div class="content-block">
+        <p class="work-heading">ECNS</p>
+        <p class="work-year">In development · Expected 2027</p>
+        <p class="work-detail">Lead developer of ECNS — a decentralized naming service for Ethereum Classic, providing human-readable .etc domain names in place of cryptographic wallet addresses.</p>
+        <p class="work-links">
+          <a href="https://ecns.domains" target="_blank" rel="noopener noreferrer">ecns.domains</a>
+        </p>
+      </div>
+
     </section>
 
     <details class="methodology-details">
       <summary>How I Work</summary>
-      <p class="methodology-text">I see the whole system before I start building it. Phase-based delivery with formal handoff documentation at each stage - every initiative decomposed into numbered phases with explicit scope, testing, and verification gates. I coordinate across multi-client, multi-language environments, aligning protocol design decisions with smart contract implementation and product delivery. Whether I'm leading a small team or shipping solo, the approach is the same: architecture first, then execution.</p>
-      <p class="methodology-text">Security and regulatory awareness are built into the process, not bolted on afterward. Adversarial modeling, formal verification, and fuzz testing are standard practice. Traditional finance discipline applied to digital asset engineering: custody isolation, separation of duties, auditability, and compliance readiness for institutional and regulated environments.</p>
+      <p class="methodology-text">I see the whole system before I start building it. Phase-based delivery with formal handoff documentation at each stage — every initiative decomposed into numbered phases with explicit scope, testing, and verification gates. I coordinate across multi-client, multi-language environments, aligning protocol design decisions with smart contract implementation and product delivery. Whether leading a small team or working independently, the approach is the same: architecture first, then execution.</p>
+      <p class="methodology-text">Security and regulatory awareness are built into the process, not bolted on afterward. Rigorous security analysis and formal verification are standard practice. Traditional finance discipline applied to digital asset engineering: custody isolation, separation of duties, auditability, and compliance readiness for institutional and regulated environments.</p>
     </details>
 
     <section id="contact" class="surface-section contact">
