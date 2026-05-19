@@ -1,0 +1,29 @@
+# Claude Code working directory (local only)
+.claude/
+CLAUDE.md
+
+# Internal development directory
+.local/
+
+SESSION_NOTES.md
+PLANNING.md
+SCRATCH.md
+*.scratch.*
+*.draft.*
+
+# dependencies
+node_modules/
+
+# env files
+.env
+.env.*
+!.env.example
+
+# build output
+.next/
+out/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
