@@ -1,26 +1,25 @@
 ### Christopher Mercer
 
-Blockchain engineer and systems architect since 2013. I started in treasury operations at ShapeShift, one of the first multi-chain exchange products in crypto, managing a $125M+ multi-asset portfolio across over a billion dollars in monthly transaction volume. That operational experience, grounded in a traditional finance background, shapes the infrastructure I design today.
+**Technical Product · Institutional Digital Assets**
 
-My work spans the full vertical, from consensus-layer protocol design through smart contracts, tokenization, governance systems, and the product interfaces that sit on top. I coordinate across independent engineering teams or lead a small one directly, bringing regulatory awareness and institutional discipline to every layer of what I build.
+Consensus-layer protocol through regulated financial product, the full stack of blockchain integration, owned end to end.
 
-**What I Design & Build:**
-
-- **Protocol Engineering:** Protocol-level upgrades across multiple blockchain clients. Coordinating independent engineering teams, proving that fundamentally different implementations behave identically, and catching specification gaps before they reach production. Full node operation across every client.
-
-- **Governance & Treasury Architecture:** Governance and custody infrastructure for institutional digital asset environments: voting systems, treasury management frameworks, and structured decision-making mechanisms for decentralized organizations. On-chain treasury systems with custody isolation, separation-of-duties enforcement, and auditable execution pipelines. Regulatory infrastructure aligned with US and international digital asset frameworks. Formal verification is standard practice across all contracts, with rigorous security testing against every possible failure scenario.
-
-- **Smart Contracts & Tokenization:** Token issuance, tokenization workflows, and decentralized finance applications including lending markets, liquidity provision, prediction markets, and stablecoin infrastructure. Every system is built to production-grade standards: modern tooling, heavily audited and battle-tested libraries, and engineering discipline that institutional environments demand. Large-scale digital asset treasury operations and trading infrastructure: liquidity routing, settlement, and portfolio analytics. The architect who writes the contracts also builds the interfaces. Contract logic through to user interaction, no handoff gap.
-
-- **Execution Client Infrastructure:** The execution layer beneath blockchain protocols: state synchronization systems that allow new nodes to join a network without downloading the full chain history, RPC and P2P networking layers that connect clients to the broader ecosystem, and tooling to validate behavioral equivalence across independent implementations.
+I turn blockchain infrastructure into institutional-grade products, from consensus-layer design to regulated financial products, owned end to end. Building in the space since 2013, grounded in a traditional-finance background.
 
 **Selected Work:**
 
-- **Olympia** (Launched 2025) — Lead architect of a protocol-level governance upgrade to Ethereum Classic. Routes network-generated revenue to a community-controlled treasury with on-chain voting and compliance infrastructure designed for regulated environments. Deployed to testnet and mainnet. [olympiadao.org](https://olympiadao.org) · [olympiatreasury.org](https://olympiatreasury.org) · [ethereumclassicdao.org](https://ethereumclassicdao.org)
-- **Classic USD** (Launched 2024) — Primary organizer of Classic USD, a US-regulated, fiat-backed stablecoin for Ethereum Classic. Issued and redeemable 1:1 against USD reserves through a licensed US money transmitter, tradable on-chain. [classicusd.com](https://classicusd.com)
-- **ETCswap** (V2 2022 · V3 & Launchpad 2024) — Founded ETCswap, a decentralized exchange on Ethereum Classic with two live protocol versions supporting token trading, liquidity provision, analytics, and a token launchpad. [etcswap.org](https://etcswap.org)
-- **EthereumClassic.com** (Launched 2026) — Architect of the Ethereum Classic consumer portal, covering wallets, exchanges, DeFi applications, mining, developer resources, and live market and network data. [ethereumclassic.com](https://ethereumclassic.com)
-- **Fukuii** (Contributing since 2025) — Contributor to Fukuii, an Ethereum Classic execution client. Adding the state synchronization infrastructure that lets new nodes join the network without downloading full chain history. [github.com/chippr-robotics/fukuii](https://github.com/chippr-robotics/fukuii)
-- **ECNS** (In development · Expected 2027) — Lead developer of ECNS, a decentralized naming service for Ethereum Classic providing human-readable .etc domain names in place of cryptographic wallet addresses. [ecns.domains](https://ecns.domains)
+- **Over a Decade in Blockchain Finance** (institutional-scale financial operations) — At one of crypto's first multi-chain exchanges, I ran treasury for a 9-figure multi-asset portfolio moving over $1B in monthly on-chain volume, verifiable on public ledgers. That operational discipline, from a traditional-finance foundation, grounds every system I build.
+- **A Decade of Debate, One Coherent Upgrade** (end-to-end product ownership, launched 2025) — As a core developer for the largest proof-of-work EVM network, I turned a decade of public community dialogue into a coherent, tangible upgrade design. Working alongside the network's other core developers, I helped plan, specify, and implement the upgrade, delivering its first long-term funding mechanism.
+- **Building the Regulated Rail for Global Adoption** (shipping regulated financial products, launched 2024) — Working with industry partners, I organized the effort to bring the first GENIUS Act-compliant stablecoin to the proof-of-work ecosystem, with connectivity from Solana to the EVM ecosystem and its L2s. Issued and redeemed 1:1 through a licensed US money transmitter, with reserve custody and compliance carried through to on-chain settlement.
+- **Early to the Next Delivery Model** (modern, AI-native delivery, contributing since 2025) — I adopt the industry's best development tooling early and fold it directly into delivery workflows. Applied to agentic, AI-assisted development, that discipline cuts the cost and time-to-market that typically demand large development budgets, without trading away safety for speed.
+
+Also: founded a decentralized exchange with two live protocol versions; and architected a consumer portal for wallets, exchanges, DeFi, and live network data.
+
+**How I Work:**
+
+1. **Architecture first** — I see the whole system before I start building it. Every initiative is decomposed into phases with explicit scope and verification gates.
+2. **Phased, documented delivery** — Delivered in phases with documented decisions and formal handoff at each stage, whether leading a small team or working independently.
+3. **Compliance built in** — Regulatory awareness and auditability are built into the process from day one, not bolted on afterward.
+4. **AI-native workflows** — Agentic development practices run through every phase: architecture stays central while AI handles the mechanical layers around it.
 
 [christophermercer.org](https://christophermercer.org) · [linkedin](https://linkedin.com/in/c-mercer) · [whiteb0x](https://whiteb0x.com)
