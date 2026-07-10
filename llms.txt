@@ -4,22 +4,22 @@
 
 ## About
 
-Christopher Mercer turns blockchain infrastructure into institutional-grade products, from consensus-layer design to regulated financial products, owned end to end. He has been building in the space since 2013, grounded in a traditional-finance background.
+Christopher Mercer's work: consensus-layer protocol through regulated financial product, the full stack of blockchain integration, owned end to end.
 
-At one of crypto's first multi-chain exchanges, he ran treasury for a 9-figure multi-asset portfolio moving over $1B in monthly on-chain volume, verifiable on public ledgers. That operational discipline grounds every system he builds.
+Building in blockchain since 2013, grounded in a traditional-finance background: treasury for a 9-figure portfolio, $1B+/mo in on-chain volume.
 
 ## Selected Work
 
-- **Over a Decade in Blockchain Finance** (institutional-scale financial operations) — At one of crypto's first multi-chain exchanges, ran treasury for a 9-figure multi-asset portfolio moving over $1B in monthly on-chain volume, verifiable on public ledgers.
-- **A Decade of Debate, One Coherent Upgrade** (end-to-end product ownership, launched 2025) — As a core developer for the largest proof-of-work EVM network, turned a decade of public community dialogue into a coherent, tangible upgrade design. Worked alongside the network's other core developers to plan, specify, and implement the upgrade, delivering its first long-term funding mechanism.
-- **Building the Regulated Rail for Global Adoption** (shipping regulated financial products, launched 2024) — Working with industry partners, organized the effort to bring the first GENIUS Act-compliant stablecoin to the proof-of-work ecosystem, with connectivity from Solana to the EVM ecosystem and its L2s. Issued and redeemed 1:1 through a licensed US money transmitter, with reserve custody and compliance carried through to on-chain settlement.
-- **Early to the Next Delivery Model** (modern, AI-native delivery, contributing since 2025) — Adopts the industry's best development tooling early and folds it directly into delivery workflows. Applied to agentic, AI-assisted development, that discipline cuts the cost and time-to-market that typically demand large development budgets, without trading away safety for speed.
+- **Over a Decade in Blockchain Finance** — At one of crypto's first multi-chain exchanges, ran treasury for a 9-figure multi-asset portfolio moving over $1B in monthly on-chain volume, verifiable on public ledgers.
+- **A Decade of Debate, One Coherent Upgrade** (launched 2025) — As a core developer for the largest proof-of-work EVM network, turned a decade of public dialogue into one coherent upgrade, planned and implemented end to end, delivering its first long-term funding mechanism.
+- **Building the Regulated Rail for Global Adoption** (launched 2024) — Organized the effort to bring the first GENIUS Act-compliant stablecoin to the proof-of-work ecosystem, connected from Solana to the EVM ecosystem and its L2s, issued and redeemed 1:1 through a licensed US money transmitter.
+- **Early to the Next Delivery Model** (contributing since 2025) — Adopts the best development tooling early, folding agentic, AI-assisted workflows directly into delivery to cut cost and time-to-market without trading away safety for speed.
 
 Also: founded a decentralized exchange with two live protocol versions; and architected a consumer portal for wallets, exchanges, DeFi, and live network data.
 
 ## How He Works
 
-Phase-based delivery with documented decisions and formal handoff at each stage, whether leading a small team or working independently. Architecture first, then execution.
+Architecture first: the whole system is seen before anything is built, every initiative decomposed into phases with explicit scope and verification gates. Delivered in phases with documented decisions and formal handoff at each stage, whether leading a small team or working independently.
 
 Regulatory awareness and auditability are built into the process from day one, not bolted on afterward. Agentic development practices run through every phase: architecture stays central while AI handles the mechanical layers around it.
 
