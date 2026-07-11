@@ -1,0 +1,1 @@
+Snapshot of the original site as it stood at the start of this redesign work (git commit `74ab20d`, "repo cleanup") — the teal-accented, single-column "Systems Architect" version, before the content repositioning and later visual redesigns. Restored via `git archive 74ab20d`. Not served, not part of the live build.

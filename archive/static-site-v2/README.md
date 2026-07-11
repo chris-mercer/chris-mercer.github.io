@@ -2,12 +2,6 @@
 
 **Technical Product · Institutional Digital Assets**
 
----
-
-An interactive personal site built with [Astro](https://astro.build) and [Three.js](https://threejs.org). The hero is a WebGL scene (wireframe blocks, an RGB particle field, ordered-dither post-processing) with a "Learn More" panel that expands into the full CV. `pnpm install && pnpm dev` to run locally.
-
----
-
 Consensus-layer protocol through regulated financial product, the full stack of blockchain integration, owned end to end.
 
 Building in blockchain since 2013, grounded in a traditional-finance background: treasury for a 9-figure portfolio, $1B+/mo in on-chain volume.

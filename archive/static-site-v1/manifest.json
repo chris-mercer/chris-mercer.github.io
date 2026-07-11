@@ -1,0 +1,14 @@
+{
+  "name": "Christopher Mercer",
+  "short_name": "CM",
+  "description": "Systems architect designing institutional-grade blockchain infrastructure. Multi-client protocol engineering, smart contracts, tokenization, governance and custody architecture, formal verification.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#f0eeeb",
+  "background_color": "#f0eeeb",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

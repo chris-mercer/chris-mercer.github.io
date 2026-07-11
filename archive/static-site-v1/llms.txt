@@ -1,0 +1,60 @@
+# Christopher Mercer
+
+> Blockchain engineer and systems architect since 2013, with a traditional finance background in institutional digital asset treasury operations. Protocol engineering, smart contracts, governance, execution client infrastructure, and institutional-grade digital asset systems.
+
+## About
+
+Christopher Mercer is a blockchain engineer and systems architect who has been building in the space since 2013. He started in treasury operations at one of the first multi-chain exchange products in crypto, managing a $125M+ multi-asset portfolio across over a billion dollars in monthly transaction volume. That operational experience, grounded in a traditional finance background, shapes the infrastructure he designs today.
+
+His work spans the full vertical, from consensus-layer protocol design through smart contracts, tokenization, governance systems, and the product interfaces that sit on top. He coordinates across independent engineering teams or leads a small one directly, bringing regulatory awareness and institutional discipline to every layer of what he builds.
+
+## What He Designs & Builds
+
+### Protocol Engineering
+Designs and implements protocol-level upgrades across multiple blockchain clients. Coordinates independent engineering teams, proves that fundamentally different implementations behave identically, and catches specification gaps before they reach production. Runs full nodes across every client and aligns protocol design decisions with downstream contract and product delivery.
+
+### Governance & Treasury Architecture
+Architects governance and custody infrastructure for institutional digital asset environments: voting systems, treasury management frameworks, and structured decision-making mechanisms for decentralized organizations. On-chain treasury systems with custody isolation, separation-of-duties enforcement, and auditable execution pipelines. Regulatory infrastructure layer: stablecoin reserve custody workflows and compliance pipelines aligned with US and international digital asset regulatory frameworks. Formal verification is standard practice across all contracts, with rigorous security testing against every possible failure scenario.
+
+### Smart Contracts & Tokenization
+Designs and deploys smart contract systems spanning token issuance, tokenization workflows, and decentralized finance applications including lending markets, liquidity provision, prediction markets, and stablecoin infrastructure. Every system is built to production-grade standards: modern tooling, heavily audited and battle-tested libraries, and engineering discipline that institutional environments demand. Has managed large-scale digital asset treasury operations and built the trading infrastructure around them: liquidity routing, settlement, and portfolio analytics.
+
+### Execution Client Infrastructure
+Designs and builds the execution layer beneath blockchain protocols: state synchronization systems that allow new nodes to join a network without downloading the full chain history, the RPC and P2P networking layers that connect clients to the broader ecosystem, and the tooling to validate behavioral equivalence across independent implementations. Has contributed to and operated multiple production execution clients across different codebases.
+
+## Selected Work
+
+- **Olympia** (Launched 2025) — Lead architect of a protocol-level governance upgrade to Ethereum Classic. Routes network-generated revenue to a community-controlled treasury with on-chain voting and compliance infrastructure for regulated environments. https://olympiadao.org
+- **Classic USD** (Launched 2024) — Primary organizer of Classic USD, a US-regulated, fiat-backed stablecoin for Ethereum Classic issued 1:1 against USD reserves through a licensed US money transmitter. https://classicusd.com
+- **ETCswap** (V2 2022, V3 & Launchpad 2024) — Founder of ETCswap, a decentralized exchange on Ethereum Classic with two live protocol versions. https://etcswap.org
+- **EthereumClassic.com** (Launched 2026) — Architect of the Ethereum Classic consumer portal covering wallets, exchanges, DeFi applications, mining, developer resources, and live market data. https://ethereumclassic.com
+- **Fukuii** (Contributing since 2025) — Contributor adding state synchronization infrastructure to Fukuii, an Ethereum Classic execution client. https://github.com/chippr-robotics/fukuii
+- **ECNS** (In development, expected 2027) — Lead developer of ECNS, a decentralized naming service for Ethereum Classic providing human-readable .etc domain names. https://ecns.domains
+
+## How He Works
+
+Phase-based delivery with formal handoff documentation at each stage. Every initiative is decomposed into numbered phases with explicit scope, testing, and verification gates. Architecture first, then execution.
+
+Security and regulatory awareness are built into the process, not bolted on afterward. Modern agentic development practices are built into every phase of delivery: AI-assisted workflows, automated code review and test generation, cross-language fluency. Lean teams delivering institutional-grade output at accelerated velocity.
+
+## Focus Areas
+
+- Protocol Engineering
+- Institutional Digital Assets
+- Governance & Treasury Architecture
+- Regulatory Infrastructure
+- Smart Contracts & Tokenization
+- Security & Formal Verification
+- Execution Client Infrastructure
+- Agentic Development
+
+## Links
+
+- Website: https://christophermercer.org
+- GitHub: https://github.com/chris-mercer
+- LinkedIn: https://linkedin.com/in/c-mercer
+- whiteb0x: https://whiteb0x.com
+
+## Contact
+
+- Email: contact@christophermercer.org
