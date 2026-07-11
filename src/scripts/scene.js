@@ -72,19 +72,16 @@ function createParticleGeometry(count) {
   return geometry;
 }
 
-const PALETTE = ['#c084fc', '#e879f9', '#a78bfa', '#22d3ee', '#f0abfc'];
-
-function pickColor() {
-  return PALETTE[Math.floor(Math.random() * PALETTE.length)];
-}
-
+// Blocks no longer take a static palette color -- their materials are
+// driven every frame by updateBlockColors() so the cluster reads as a
+// slow, continuous RGB gradient rather than fixed per-block hues.
 function createBlock(size) {
   const geo = new THREE.EdgesGeometry(new THREE.BoxGeometry(size, size, size));
-  const lineMat = new THREE.LineBasicMaterial({ color: pickColor(), transparent: true, opacity: 0.9 });
+  const lineMat = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.9 });
   const lines = new THREE.LineSegments(geo, lineMat);
 
   const fillMat = new THREE.MeshBasicMaterial({
-    color: pickColor(),
+    color: 0xffffff,
     transparent: true,
     opacity: 0.07,
     blending: THREE.AdditiveBlending,
@@ -95,7 +92,7 @@ function createBlock(size) {
 
   const group = new THREE.Group();
   group.add(fill, lines);
-  return group;
+  return { group, lineMat, fillMat };
 }
 
 export function initScene(canvas, fallbackEl) {
@@ -135,14 +132,27 @@ export function initScene(canvas, fallbackEl) {
 
   const hero = createBlock(2.2);
   const heroInner = createBlock(2.2 * 0.55);
-  heroInner.rotation.set(THREE.MathUtils.degToRad(20), THREE.MathUtils.degToRad(20), 0);
-  hero.add(heroInner);
-  blockGroup.add(hero);
+  heroInner.group.rotation.set(THREE.MathUtils.degToRad(20), THREE.MathUtils.degToRad(20), 0);
+  hero.group.add(heroInner.group);
+  blockGroup.add(hero.group);
+
+  // Every block's line/fill materials, each with a distinct hue-cycle phase
+  // offset, so the RGB gradient sweeps across the cluster rather than every
+  // block flashing the same color at once.
+  const animatedMaterials = [
+    { lineMat: hero.lineMat, fillMat: hero.fillMat, hueOffset: 0 },
+    { lineMat: heroInner.lineMat, fillMat: heroInner.fillMat, hueOffset: 0.12 },
+  ];
 
   const chainBlocks = Array.from({ length: 6 }, (_, i) => {
     const size = THREE.MathUtils.randFloat(0.3, 0.65);
-    const mesh = createBlock(size);
-    blockGroup.add(mesh);
+    const block = createBlock(size);
+    blockGroup.add(block.group);
+    animatedMaterials.push({
+      lineMat: block.lineMat,
+      fillMat: block.fillMat,
+      hueOffset: (i + 1) / 6,
+    });
     const speedSeed = (PHI_INV * (i + 1)) % 1;
 
     // Solar-system read: radii staggered per index (like planetary orbits,
@@ -154,7 +164,7 @@ export function initScene(canvas, fallbackEl) {
     const inclination = THREE.MathUtils.randFloat(-0.6, 0.6);
 
     return {
-      mesh,
+      mesh: block.group,
       rotSpeed: {
         x: 0.15 * (0.4 + speedSeed),
         y: 0.15 * (0.4 + ((speedSeed * 1.618) % 1)),
@@ -262,13 +272,13 @@ export function initScene(canvas, fallbackEl) {
   });
 
   function animateBlocks(t, delta) {
-    hero.rotation.x += delta * 0.09 * PHI_INV;
-    hero.rotation.y += delta * 0.09;
-    hero.rotation.z += delta * 0.09 * (PHI_INV * PHI_INV);
-    heroInner.rotation.x -= delta * 0.06;
-    heroInner.rotation.y -= delta * 0.06 * PHI_INV;
-    hero.scale.setScalar(1 + Math.sin(t * 0.5) * 0.03);
-    hero.position.y = Math.sin(t * 0.35) * 0.15;
+    hero.group.rotation.x += delta * 0.09 * PHI_INV;
+    hero.group.rotation.y += delta * 0.09;
+    hero.group.rotation.z += delta * 0.09 * (PHI_INV * PHI_INV);
+    heroInner.group.rotation.x -= delta * 0.06;
+    heroInner.group.rotation.y -= delta * 0.06 * PHI_INV;
+    hero.group.scale.setScalar(1 + Math.sin(t * 0.5) * 0.03);
+    hero.group.position.y = Math.sin(t * 0.35) * 0.15;
 
     for (const b of chainBlocks) {
       b.mesh.rotation.x += delta * b.rotSpeed.x;
@@ -279,6 +289,18 @@ export function initScene(canvas, fallbackEl) {
       const ox = Math.cos(angle) * radius;
       const oz = Math.sin(angle) * radius;
       b.mesh.position.set(ox, oz * Math.sin(inclination), oz * Math.cos(inclination));
+    }
+  }
+
+  const colorScratch = new THREE.Color();
+  const HUE_CYCLE_SPEED = 0.05; // one full spectrum sweep every ~20s
+
+  function updateBlockColors(t) {
+    for (const m of animatedMaterials) {
+      const hue = (t * HUE_CYCLE_SPEED + m.hueOffset) % 1;
+      colorScratch.setHSL(hue, 0.75, 0.65);
+      m.lineMat.color.copy(colorScratch);
+      m.fillMat.color.copy(colorScratch);
     }
   }
 
@@ -312,6 +334,7 @@ export function initScene(canvas, fallbackEl) {
     particleMaterial.uniforms.uTime.value = 0;
     rgbShiftPass.uniforms.amount.value = 0.002;
     camera.lookAt(blockGroup.position);
+    updateBlockColors(0);
     composer.render();
   }
 
@@ -321,6 +344,7 @@ export function initScene(canvas, fallbackEl) {
 
     animateBlocks(t, delta);
     updateReactivity(t, delta);
+    updateBlockColors(t);
     particleMaterial.uniforms.uTime.value = t;
 
     composer.render();
