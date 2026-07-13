@@ -1,0 +1,111 @@
+<!--
+  Source for public/og-image.png (1200x630). Regenerate after edits with:
+  playwright screenshot, viewport 1200x630, device_scale_factor 1, e.g.:
+    page.goto('file://' + path.resolve('scripts/og-image.html'))
+    page.screenshot({ path: 'public/og-image.png' })
+  Requires JetBrains Mono installed locally for accurate rendering.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<style>
+  @font-face {
+    font-family: 'JetBrains Mono';
+    src: local('JetBrains Mono');
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1200px;
+    height: 630px;
+    background: #08050c;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    overflow: hidden;
+  }
+  .canvas {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+  }
+  .glow {
+    position: absolute;
+    top: -220px;
+    right: -160px;
+    width: 720px;
+    height: 720px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(192,132,252,0.16) 0%, rgba(192,132,252,0.05) 45%, transparent 72%);
+  }
+  .glow2 {
+    position: absolute;
+    bottom: -260px;
+    left: -180px;
+    width: 620px;
+    height: 620px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(34,211,238,0.08) 0%, transparent 70%);
+  }
+  .content {
+    position: absolute;
+    left: 96px;
+    top: 0;
+    height: 630px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .rule {
+    width: 56px;
+    height: 3px;
+    background: #c084fc;
+    margin-bottom: 28px;
+  }
+  .name {
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: #f4f1f8;
+    line-height: 1.05;
+  }
+  .subtitle {
+    margin-top: 22px;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #a89cc0;
+  }
+  .domain {
+    position: absolute;
+    left: 96px;
+    bottom: 56px;
+    font-size: 17px;
+    letter-spacing: 0.08em;
+    color: rgba(168,156,192,0.45);
+  }
+  .corner {
+    position: absolute;
+    top: 56px;
+    right: 96px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: rgba(34,211,238,0.55);
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="glow"></div>
+    <div class="glow2"></div>
+    <div class="corner">Blockchain &middot; Product &middot; Protocol</div>
+    <div class="content">
+      <div class="rule"></div>
+      <div class="name">CHRISTOPHER<br/>MERCER</div>
+      <div class="subtitle">Technical Blockchain Product &middot; Institutional Digital Assets</div>
+    </div>
+    <div class="domain">christophermercer.org</div>
+  </div>
+</body>
+</html>

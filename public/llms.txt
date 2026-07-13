@@ -1,0 +1,48 @@
+# Christopher Mercer
+
+> Blockchain product and protocol builder — from the consensus layer to the regulated financial product. Building in blockchain since 2013.
+
+## About
+
+My work spans the full stack of blockchain integration, from the consensus layer to the regulated financial product. Drawn to distributed systems since Napster, working in blockchain since 2013 and building since 2016 — an open, results-driven builder motivated by the global adoption of distributed systems and the economic freedom they extend to people everywhere.
+
+## Development Studio
+
+White B0x Inc. is the development studio where Christopher engineers and builds the next products in blockchain. https://whiteb0x.com
+
+## Experience
+
+- **Over a Decade in Blockchain Finance** (Since 2013) — Managed a nine-figure multi-asset treasury for one of crypto's first multi-chain exchanges, settling $1B+ a month on-chain.
+- **Blockchain Finance to Core Development** (Since 2016) — Core developer on a major proof-of-work EVM network. Client development, spec drafting and implementation, network organization and protocol upgrades. Shipping blockchain infrastructure and critical software.
+- **Building the Regulated Rail for Global Adoption** (Since 2019) — Organized the launch of a GENIUS-compliant stablecoin on a neutral proof-of-work settlement rail, redeemable 1:1 through a licensed money transmitter, alongside the composable DeFi and regulated digital-asset primitives around it.
+- **Early to the Next Delivery Model** (Since 2024) — Now building with best practices in agentic tooling: optimizing for correctness and velocity, letting one person deliver at team pace and a lean team at organization scale.
+
+## Method
+
+- Architecture first — the whole system is seen before anything is built: phased, spec-driven, with explicit verification gates.
+- Phased, documented delivery — documented decisions and formal handoff at each stage, leading a small team or working independently.
+- Compliance built in — regulatory awareness and auditability from day one, not bolted on.
+- Agentic workflows — architecture stays central while agentic tooling handles the mechanical layers.
+
+## Focus Areas
+
+- Blockchain Product
+- Protocol Engineering
+- Institutional Digital Assets
+- Blockchain Integration
+- Consensus-Layer Protocol Design
+- Stablecoin Infrastructure
+- Governance Architecture
+- Execution Client Infrastructure
+- Agentic Development
+
+## Links
+
+- Website: https://christophermercer.org
+- Development Studio: https://whiteb0x.com
+- GitHub: https://github.com/chris-mercer
+- LinkedIn: https://linkedin.com/in/c-mercer
+
+## Contact
+
+- Email: contact@christophermercer.org
