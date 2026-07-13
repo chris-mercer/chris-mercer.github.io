@@ -2,30 +2,30 @@
 const workItems = [
   {
     heading: 'Over a Decade in Blockchain Finance',
-    date: null,
-    body: "At one of crypto's first multi-chain exchanges, I ran treasury for a 9-figure multi-asset portfolio moving over $1B in monthly on-chain volume, verifiable on public ledgers.",
+    date: 'Career started in 2013',
+    body: "Managed a nine-figure multi-asset treasury for one of crypto's first multi-chain exchanges, settling $1B+ a month on-chain.",
   },
   {
-    heading: 'A Decade of Debate, One Coherent Upgrade',
-    date: 'Launched 2025',
-    body: "As a core developer for the largest proof-of-work EVM network, I turned a decade of public dialogue into one coherent upgrade, planned and implemented end to end, delivering its first long-term funding mechanism.",
+    heading: 'Blockchain Finance to Core Development',
+    date: 'Development Journey',
+    body: "Core developer on a major proof-of-work EVM network. Client development, spec drafting and implementation, network organization and protocol upgrades. Shipping blockchain infrastructure and critical software.",
   },
   {
     heading: 'Building the Regulated Rail for Global Adoption',
-    date: 'Launched 2024',
-    body: "I organized the effort to bring the first GENIUS Act-compliant stablecoin to the proof-of-work ecosystem, connected from Solana to the EVM ecosystem and its L2s, issued and redeemed 1:1 through a licensed US money transmitter.",
+    date: 'Regulatory Friendly Development',
+    body: "Organized the launch of a US-regulated stablecoin, redeemable 1:1 through a licensed money transmitter. Building composable DeFi and regulated digital-asset primitives. Applying industry knowledge and expertise to areas where long-term value accrues.",
   },
   {
     heading: 'Early to the Next Delivery Model',
-    date: 'Contributing since 2025',
-    body: "I adopt the best development tooling early, folding agentic, AI-assisted workflows directly into delivery to cut cost and time-to-market without trading away safety for speed.",
+    date: 'Modernized Workflow & Industry Leading Practices',
+    body: "Always at the cutting edge of tech, now building with best practices in agentic tooling — optimizing correctness, increasing velocity, and allowing one person to deliver at team pace, one lean team to deliver at large-organization pace. Shrinking timelines and maximizing budgets.",
   },
 ];
 
 const howIWork = [
   {
     label: 'Architecture first',
-    body: 'I see the whole system before I build it: every initiative decomposed into phases, with explicit scope and verification gates.',
+    body: 'I see the whole system before I build it: every initiative decomposed into phases, with explicit scope and verification gates. Research informed, spec driven development.',
   },
   {
     label: 'Phased, documented delivery',
@@ -36,13 +36,13 @@ const howIWork = [
     body: 'Regulatory awareness and auditability are built into the process from day one, not bolted on afterward.',
   },
   {
-    label: 'AI-native workflows',
-    body: 'Agentic development practices run through every phase: architecture stays central while AI handles the mechanical layers around it.',
+    label: 'Agentic Workflows',
+    body: 'Best practices in agentic development run through every phase: architecture stays central while agentic tooling optimizes velocity on the mechanical layers around it.',
   },
 ];
 
 const contactRows = [
-  { label: 'EMAIL', value: 'contact@christophermercer.org', href: 'mailto:contact@christophermercer.org?subject=Inquiry%20-%20christophermercer.org&body=Name%3A%0ACompany%3A%0ARole%2FTitle%3A%0A%0AType%20of%20Inquiry%20(role%20%2F%20contract%20%2F%20collaboration%20%2F%20other)%3A%0A%0ADetails%3A%0A' },
+  { label: 'EMAIL', value: 'contact@christophermercer.org', href: 'mailto:contact@christophermercer.org' },
   { label: 'GITHUB', value: 'github.com/chris-mercer', href: 'https://github.com/chris-mercer' },
   { label: 'LINKEDIN', value: 'linkedin.com/in/c-mercer', href: 'https://linkedin.com/in/c-mercer' },
   { label: 'WHITEB0X', value: 'whiteb0x.com', href: 'https://whiteb0x.com' },
@@ -54,13 +54,12 @@ const contactRows = [
     <button id="info-panel-close" class="close-btn" type="button">CLOSE</button>
 
     <h1 id="info-panel-title" class="name">CHRISTOPHER MERCER</h1>
-    <p class="title">Technical Product &middot; Institutional Digital Assets</p>
+    <p class="title">Technical Blockchain Product &middot; Institutional Digital Assets</p>
 
     <section class="section">
       <p class="about-text">
-        Consensus-layer protocol through regulated financial product, the full stack of blockchain
-        integration, owned end to end. Building in blockchain since 2013, grounded in a
-        traditional-finance background: treasury for a 9-figure portfolio, $1B+/mo in on-chain volume.
+        I own blockchain integration end to end — from the consensus layer to the regulated
+        financial product. Building since 2013, out of a traditional-finance background.
       </p>
     </section>
 
@@ -74,8 +73,7 @@ const contactRows = [
         </div>
       ))}
       <p class="supporting-line">
-        Also: founded a decentralized exchange with two live protocol versions; and architected a
-        consumer portal for wallets, exchanges, DeFi, and live network data.
+        Also: founded a composable DeFi stack and many application layer products.
       </p>
     </section>
 
@@ -103,7 +101,7 @@ const contactRows = [
       </div>
     </section>
 
-    <hr class="hairline" />
+    {/* Hero model by Quaternius (https://poly.pizza/m/tQdzbZ1Cmw), CC0/public domain — no attribution required, kept here for reference only, not displayed. */}
     <button class="close-btn-bottom" type="button" data-close>CLOSE</button>
   </div>
 </div>
@@ -251,12 +249,6 @@ const contactRows = [
   .contact-value:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
-  }
-
-  .hairline {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 2.5rem 0 1.5rem;
   }
 
   .close-btn-bottom {
