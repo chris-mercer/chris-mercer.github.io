@@ -18,6 +18,7 @@ interface PaletteStop {
   skyBottom: THREE.Color;
   lightColor: THREE.Color;
   lightIntensity: number;
+  directIntensity: number;
   elevationDeg: number;
 }
 
@@ -27,6 +28,7 @@ function stop(
   skyBottom: string,
   lightColor: string,
   lightIntensity: number,
+  directIntensity: number,
   elevationDeg: number,
 ): PaletteStop {
   return {
@@ -35,6 +37,7 @@ function stop(
     skyBottom: new THREE.Color(skyBottom),
     lightColor: new THREE.Color(lightColor),
     lightIntensity,
+    directIntensity,
     elevationDeg,
   };
 }
@@ -43,13 +46,24 @@ function stop(
 // values equal the first's). Hand-authored rather than physically
 // simulated, so ACES tone mapping's compression was tuned against these
 // exact hex values in-engine.
+//
+// lightIntensity drives ambient fill and sky/fog brightness — it stays
+// nonzero at night (0.18) because the moonless-night LOOK (deep but still
+// legible) already reads correctly and is deliberately unchanged here.
+// directIntensity drives the actual directional light SunLight.tsx casts
+// into the scene, and is zeroed at night: the "moon" disc (LightSource.tsx)
+// is a visual-only element with no real elevation/angle behind it, so
+// letting it cast a real directional light was hitting the elk/trees as
+// harsh, wrong-angle grazing light — the reported artifact. The sun still
+// casts normally through dawn/day/dusk, where directIntensity mirrors
+// lightIntensity.
 const STOPS: PaletteStop[] = [
-  stop(0.0, '#0b1026', '#1b2340', '#425a8c', 0.18, -8),
-  stop(0.18, '#2b3a6b', '#e69a6b', '#ffb473', 0.65, 6),
-  stop(0.35, '#4a78c2', '#a8c9e8', '#fff3d6', 1.0, 55),
-  stop(0.62, '#3a66b0', '#b8d4ec', '#fff6e0', 1.05, 42),
-  stop(0.8, '#3a3564', '#e8794f', '#ff9d5c', 0.55, 8),
-  stop(1.0, '#0b1026', '#1b2340', '#425a8c', 0.18, -8),
+  stop(0.0, '#0b1026', '#1b2340', '#425a8c', 0.18, 0, -8),
+  stop(0.18, '#2b3a6b', '#e69a6b', '#ffb473', 0.65, 0.65, 6),
+  stop(0.35, '#4a78c2', '#a8c9e8', '#fff3d6', 1.0, 1.0, 55),
+  stop(0.62, '#3a66b0', '#b8d4ec', '#fff6e0', 1.05, 1.05, 42),
+  stop(0.8, '#3a3564', '#e8794f', '#ff9d5c', 0.55, 0.55, 8),
+  stop(1.0, '#0b1026', '#1b2340', '#425a8c', 0.18, 0, -8),
 ];
 
 export interface SkyPalette {
@@ -57,6 +71,7 @@ export interface SkyPalette {
   skyBottom: THREE.Color;
   lightColor: THREE.Color;
   lightIntensity: number;
+  directIntensity: number;
   lightElevationDeg: number;
   lightAzimuthDeg: number;
   fogColor: THREE.Color;
@@ -96,6 +111,7 @@ export function getSkyPalette(phase: number, out: SkyPalette): SkyPalette {
   out.skyBottom.copy(a.skyBottom).lerp(b.skyBottom, t);
   out.lightColor.copy(a.lightColor).lerp(b.lightColor, t);
   out.lightIntensity = THREE.MathUtils.lerp(a.lightIntensity, b.lightIntensity, t);
+  out.directIntensity = THREE.MathUtils.lerp(a.directIntensity, b.directIntensity, t);
   out.lightElevationDeg = THREE.MathUtils.lerp(a.elevationDeg, b.elevationDeg, t);
   out.lightAzimuthDeg = azimuthForPhase(p);
   out.fogColor.copy(out.skyBottom);
@@ -109,6 +125,7 @@ export function createSkyPalette(): SkyPalette {
     skyBottom: new THREE.Color(),
     lightColor: new THREE.Color(),
     lightIntensity: 1,
+    directIntensity: 1,
     lightElevationDeg: 0,
     lightAzimuthDeg: 0,
     fogColor: new THREE.Color(),
