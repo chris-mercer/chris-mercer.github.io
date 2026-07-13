@@ -1,0 +1,14 @@
+{
+  "name": "Christopher Mercer",
+  "short_name": "CM",
+  "description": "Technical product leader in institutional digital assets. Consensus-layer protocol through regulated financial products, owned end to end.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#f0eeeb",
+  "background_color": "#f0eeeb",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

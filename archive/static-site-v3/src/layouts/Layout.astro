@@ -1,0 +1,164 @@
+---
+interface Props {
+  title?: string;
+}
+
+const {
+  title = 'Christopher Mercer | Technical Product · Institutional Digital Assets',
+} = Astro.props;
+
+const description =
+  'Technical product leader in institutional digital assets. Consensus-layer protocol through regulated financial products, owned end to end. Building in blockchain since 2013.';
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#08050c" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Christopher Mercer" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://christophermercer.org" />
+    <meta name="author" content="Christopher Mercer" />
+    <meta
+      name="keywords"
+      content="institutional digital assets, technical product leadership, consensus-layer protocol design, regulated financial products, digital asset treasury operations, stablecoin infrastructure, tokenization, governance architecture, execution client infrastructure, AI-native engineering, agentic development, GENIUS Act compliance"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Christopher Mercer, Technical Product · Institutional Digital Assets" />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://christophermercer.org" />
+    <meta property="og:site_name" content="Christopher Mercer" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://christophermercer.org/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Christopher Mercer, Technical Product, Institutional Digital Assets" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Christopher Mercer, Technical Product · Institutional Digital Assets" />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://christophermercer.org/og-image.png" />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: 'Christopher Mercer',
+      url: 'https://christophermercer.org',
+      jobTitle: 'Technical Product · Institutional Digital Assets',
+      description:
+        'Consensus-layer protocol through regulated financial product, the full stack of blockchain integration, owned end to end. Building in blockchain since 2013, grounded in a traditional-finance background.',
+      sameAs: [
+        'https://github.com/chris-mercer',
+        'https://linkedin.com/in/c-mercer',
+        'https://whiteb0x.com',
+      ],
+      email: 'contact@christophermercer.org',
+      knowsAbout: [
+        'Institutional Digital Assets',
+        'Consensus-Layer Protocol Design',
+        'Regulated Financial Products',
+        'Digital Asset Treasury Operations',
+        'Stablecoin Infrastructure',
+        'Tokenization',
+        'Governance Architecture',
+        'Execution Client Infrastructure',
+        'AI-Native Engineering',
+        'Agentic Development',
+      ],
+    })} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon={JSON.stringify({ token: '436f0695eef84251ad68820649bd8530' })}
+    ></script>
+
+    <style is:global>
+      :root {
+        --bg: #08050c;
+        --panel-bg: rgba(10, 6, 18, 0.86);
+        --text: #f4f1f8;
+        --text-secondary: #a89cc0;
+        --border: rgba(244, 241, 248, 0.14);
+        --accent: #c084fc;
+        --accent-cyan: #22d3ee;
+        --hud-chip-bg: rgba(10, 6, 18, 0.55);
+        --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-mono);
+        overflow-x: hidden;
+      }
+
+      body {
+        min-height: 100vh;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      a {
+        color: inherit;
+      }
+
+      ::selection {
+        background: var(--accent);
+        color: #08050c;
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
