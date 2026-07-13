@@ -2,42 +2,42 @@
 const workItems = [
   {
     heading: 'Over a Decade in Blockchain Finance',
-    date: 'Career started in 2013',
+    date: 'Since 2013',
     body: "Managed a nine-figure multi-asset treasury for one of crypto's first multi-chain exchanges, settling $1B+ a month on-chain.",
   },
   {
     heading: 'Blockchain Finance to Core Development',
-    date: 'Development Journey',
+    date: 'Since 2016',
     body: "Core developer on a major proof-of-work EVM network. Client development, spec drafting and implementation, network organization and protocol upgrades. Shipping blockchain infrastructure and critical software.",
   },
   {
     heading: 'Building the Regulated Rail for Global Adoption',
-    date: 'Regulatory Friendly Development',
-    body: "Organized the launch of a US-regulated stablecoin, redeemable 1:1 through a licensed money transmitter. Building composable DeFi and regulated digital-asset primitives. Applying industry knowledge and expertise to areas where long-term value accrues.",
+    date: 'Since 2019',
+    body: "Organized the launch of a GENIUS-compliant stablecoin on a neutral proof-of-work settlement rail — redeemable 1:1 through a licensed money transmitter — alongside the composable DeFi and regulated digital-asset primitives around it. Applying over a decade of industry knowledge to build long-term value where regulation lands and adoption multiplies.",
   },
   {
     heading: 'Early to the Next Delivery Model',
-    date: 'Modernized Workflow & Industry Leading Practices',
-    body: "Always at the cutting edge of tech, now building with best practices in agentic tooling — optimizing correctness, increasing velocity, and allowing one person to deliver at team pace, one lean team to deliver at large-organization pace. Shrinking timelines and maximizing budgets.",
+    date: 'Since 2024',
+    body: "Now building with best practices in agentic tooling — optimizing for correctness and velocity, letting one person deliver at team pace and a lean team at organization scale. Shorter timelines, lower cost, no loss of rigor.",
   },
 ];
 
 const howIWork = [
   {
     label: 'Architecture first',
-    body: 'I see the whole system before I build it: every initiative decomposed into phases, with explicit scope and verification gates. Research informed, spec driven development.',
+    body: 'I see the whole system before I build it: phased, spec-driven, with explicit verification gates.',
   },
   {
     label: 'Phased, documented delivery',
-    body: 'Delivered in phases with documented decisions and formal handoff at each stage, whether leading a small team or working independently.',
+    body: 'documented decisions and formal handoff at each stage, leading a small team or working independently.',
   },
   {
     label: 'Compliance built in',
-    body: 'Regulatory awareness and auditability are built into the process from day one, not bolted on afterward.',
+    body: 'regulatory awareness and auditability from day one, not bolted on.',
   },
   {
-    label: 'Agentic Workflows',
-    body: 'Best practices in agentic development run through every phase: architecture stays central while agentic tooling optimizes velocity on the mechanical layers around it.',
+    label: 'Agentic workflows',
+    body: 'architecture stays central while agentic tooling handles the mechanical layers.',
   },
 ];
 
@@ -58,13 +58,23 @@ const contactRows = [
 
     <section class="section">
       <p class="about-text">
-        I own blockchain integration end to end — from the consensus layer to the regulated
-        financial product. Building since 2013, out of a traditional-finance background.
+        My work spans the full stack of blockchain integration, from the consensus layer to the
+        regulated financial product. Drawn to distributed systems since Napster, working in
+        blockchain since 2013 and building since 2016 — an open, results-driven builder
+        motivated by the global adoption of distributed systems and the economic freedom they
+        extend to people everywhere.
       </p>
     </section>
 
     <section class="section">
-      <h2 class="section-title">SELECTED WORK</h2>
+      <h2 class="section-title">DEVELOPMENT STUDIO</h2>
+      <p class="portfolio-line">
+        <a class="inline-link" href="https://whiteb0x.com" target="_blank" rel="noopener noreferrer">White B0x Inc.</a> is the development studio where I engineer and build the next products in blockchain.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">EXPERIENCE</h2>
       {workItems.map((item) => (
         <div class="work-item">
           <h3 class="work-heading">{item.heading}</h3>
@@ -72,18 +82,12 @@ const contactRows = [
           <p class="work-body">{item.body}</p>
         </div>
       ))}
-      <p class="supporting-line">
-        Also: founded a composable DeFi stack and many application layer products.
-      </p>
     </section>
 
     <section class="section">
-      <h2 class="section-title">HOW I WORK</h2>
+      <h2 class="section-title">METHOD</h2>
       {howIWork.map((item) => (
-        <div class="how-item">
-          <h3 class="how-label">{item.label}</h3>
-          <p class="how-body">{item.body}</p>
-        </div>
+        <p class="how-line"><strong class="how-label">{item.label}</strong> — {item.body}</p>
       ))}
     </section>
 
@@ -102,7 +106,7 @@ const contactRows = [
     </section>
 
     {/* Hero model by Quaternius (https://poly.pizza/m/tQdzbZ1Cmw), CC0/public domain — no attribution required, kept here for reference only, not displayed. */}
-    <button class="close-btn-bottom" type="button" data-close>CLOSE</button>
+    <a class="cta-btn" href="mailto:contact@christophermercer.org">Get in touch</a>
   </div>
 </div>
 
@@ -179,25 +183,36 @@ const contactRows = [
 
   .about-text,
   .work-body,
-  .how-body,
-  .supporting-line {
+  .how-line,
+  .portfolio-line {
     font-size: 0.9375rem;
     line-height: 1.7;
     color: var(--text-secondary);
   }
 
-  .work-item,
-  .how-item {
+  .work-item {
     margin-bottom: 1.5rem;
   }
 
-  .work-heading,
-  .how-label {
+  .work-heading {
     font-size: 0.9375rem;
     font-weight: 700;
     letter-spacing: 0.01em;
     color: var(--text);
     margin-bottom: 0.375rem;
+  }
+
+  .how-line {
+    margin-bottom: 0.75rem;
+  }
+
+  .how-line:last-child {
+    margin-bottom: 0;
+  }
+
+  .how-label {
+    font-weight: 700;
+    color: var(--text);
   }
 
   .work-date {
@@ -208,8 +223,7 @@ const contactRows = [
     margin-bottom: 0.5rem;
   }
 
-  .supporting-line {
-    margin-top: 1.5rem;
+  .portfolio-line {
     max-width: 34rem;
   }
 
@@ -233,40 +247,54 @@ const contactRows = [
     color: var(--text-secondary);
   }
 
-  .contact-value {
-    font-size: 0.875rem;
+  .contact-value,
+  .inline-link {
     color: var(--text);
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: color 0.15s ease, border-color 0.15s ease;
   }
 
-  .contact-value:hover {
+  .contact-value {
+    font-size: 0.875rem;
+  }
+
+  .contact-value:hover,
+  .inline-link:hover {
     color: var(--accent);
     border-color: var(--accent);
   }
 
-  .contact-value:focus-visible {
+  .contact-value:focus-visible,
+  .inline-link:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
 
-  .close-btn-bottom {
+  .cta-btn {
+    display: inline-block;
     font-family: var(--font-mono);
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.1em;
-    color: var(--text-secondary);
-    background: transparent;
-    border: 1px solid var(--border);
-    padding: 0.5rem 0.75rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--bg);
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.625rem 1rem;
     cursor: pointer;
-    transition: color 0.15s ease, border-color 0.15s ease;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
   }
 
-  .close-btn-bottom:hover {
-    color: var(--accent);
-    border-color: var(--accent);
+  .cta-btn:hover {
+    background: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+  }
+
+  .cta-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 </style>
 
@@ -274,7 +302,6 @@ const contactRows = [
   const panel = document.getElementById('info-panel') as HTMLDivElement;
   const trigger = document.getElementById('learn-more-trigger') as HTMLButtonElement;
   const closeBtn = document.getElementById('info-panel-close') as HTMLButtonElement;
-  const closeBtnBottom = document.querySelector('[data-close]') as HTMLButtonElement;
 
   let lastFocused: HTMLElement | null = null;
 
@@ -299,5 +326,4 @@ const contactRows = [
 
   trigger.addEventListener('click', openPanel);
   closeBtn.addEventListener('click', closePanel);
-  closeBtnBottom?.addEventListener('click', closePanel);
 </script>

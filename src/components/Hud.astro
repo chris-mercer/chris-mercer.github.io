@@ -65,19 +65,17 @@
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.1em;
-    color: var(--accent-cyan);
-    background: var(--hud-chip-bg);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: 1px solid var(--border);
+    color: var(--bg);
+    background: var(--accent);
+    border: 1px solid var(--accent);
     padding: 0.5rem 0.75rem;
     cursor: pointer;
-    transition: color 0.15s ease, border-color 0.15s ease;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
   }
 
   .learn-more:hover {
-    color: var(--accent);
-    border-color: var(--accent);
+    background: var(--accent-cyan);
+    border-color: var(--accent-cyan);
   }
 
   .learn-more:focus-visible {
@@ -86,8 +84,10 @@
   }
 
   @media (max-width: 560px) {
-    .wordmark {
-      display: none;
+    .top-left {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
     }
     .top-right {
       display: none;
