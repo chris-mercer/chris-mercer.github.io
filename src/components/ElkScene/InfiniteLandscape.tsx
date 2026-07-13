@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
-import { Ground } from './Ground';
+import { Ground, type GroundHandle } from './Ground';
 import { Forest } from './Forest';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 import { GROUND_SIZE, FOREST_CLEARING_RADIUS } from './constants';
@@ -24,17 +24,23 @@ interface InfiniteLandscapeProps {
 export function InfiniteLandscape({ groundSegments, treeCount, treeTierCount }: InfiniteLandscapeProps) {
   const reducedMotion = useReducedMotion();
   const tileRefs = [useRef<THREE.Group>(null), useRef<THREE.Group>(null)];
+  const groundRefs = [useRef<GroundHandle>(null), useRef<GroundHandle>(null)];
 
-  // A tile's Ground/Forest geometry is baked once from `originX` (which
+  // A tile's Ground/Forest geometry is baked from `originX` (which
   // noise-sampling slice of the continuous terrain it represents) — but
   // its on-screen position scrolls every frame via group.position.x.
   // Those two have to stay in sync, or the pattern baked into a tile no
   // longer corresponds to where it's currently rendered, and the two
-  // tiles' touching edges sample completely different noise values —
-  // exactly the visible seam this was producing. originX only needs to
-  // update at the (rare, ~once per wrap) moment a tile jumps back around,
-  // not every frame, so this stays a cheap one-time regeneration rather
-  // than a per-frame cost.
+  // tiles' touching edges sample mismatched noise values — the visible
+  // seam this was producing. `origins` (React state) still drives Forest
+  // and each Ground's initial bake, but Ground's rebake at wrap time goes
+  // through its imperative `rebake()` handle instead, called synchronously
+  // below in the same tick as the position jump — routing it through
+  // setOrigins alone left a real one-frame (or more) gap where the
+  // position had already jumped but the geometry hadn't re-baked yet
+  // (React state updates apply on the next render, not immediately).
+  // Forest keeps that small lag since discrete tree placement doesn't
+  // read as a hard seam the way a continuous surface does.
   const [origins, setOrigins] = useState<[number, number]>([0, GROUND_SIZE]);
 
   useFrame((_state, delta) => {
@@ -50,6 +56,7 @@ export function InfiniteLandscape({ groundSegments, treeCount, treeTierCount }: 
           group.position.x += GROUND_SIZE * 2;
           changedIndex = i;
           changedValue = origins[i] + GROUND_SIZE * 2;
+          groundRefs[i].current?.rebake(changedValue);
         }
       });
 
@@ -66,7 +73,7 @@ export function InfiniteLandscape({ groundSegments, treeCount, treeTierCount }: 
   return (
     <>
       <group ref={tileRefs[0]} position={[0, 0, 0]}>
-        <Ground segments={groundSegments} originX={origins[0]} />
+        <Ground ref={groundRefs[0]} segments={groundSegments} originX={origins[0]} />
         <Forest
           treeCount={treeCount}
           tierCount={treeTierCount}
@@ -76,7 +83,7 @@ export function InfiniteLandscape({ groundSegments, treeCount, treeTierCount }: 
         />
       </group>
       <group ref={tileRefs[1]} position={[GROUND_SIZE, 0, 0]}>
-        <Ground segments={groundSegments} originX={origins[1]} />
+        <Ground ref={groundRefs[1]} segments={groundSegments} originX={origins[1]} />
         <Forest
           treeCount={treeCount}
           tierCount={treeTierCount}

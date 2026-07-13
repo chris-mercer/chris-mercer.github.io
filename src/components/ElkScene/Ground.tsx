@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import { forwardRef, useImperativeHandle, useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
 import { getHeightAt, getHeightRange, DEFAULT_TERRAIN_PARAMS } from './noise';
@@ -10,6 +10,10 @@ interface GroundProps {
   // scrolling tile bake in a genuinely different slice of the continuous
   // terrain function rather than an identical repeating copy.
   originX?: number;
+}
+
+export interface GroundHandle {
+  rebake: (originX: number) => void;
 }
 
 // The elk stands at a fixed world position and never translates, but the
@@ -50,64 +54,101 @@ const PATCH_COLOR = new THREE.Color('#3d3016');
 // single smooth gradient rather than a single flat vertex-color lerp.
 const PATCH_PARAMS = { ...DEFAULT_TERRAIN_PARAMS, seed: 91, frequency: 0.22, octaves: 2 };
 
-export function Ground({ segments, originX = 0 }: GroundProps) {
+function bakeGeometry(segments: number, originX: number): { geometry: THREE.BufferGeometry; bakedHeights: Float32Array } {
+  const geo = new THREE.PlaneGeometry(GROUND_SIZE, GROUND_SIZE, segments, segments);
+  geo.rotateX(-Math.PI / 2);
+
+  const position = geo.getAttribute('position');
+  const colors = new Float32Array(position.count * 3);
+  const bakedHeights = new Float32Array(position.count);
+  const color = new THREE.Color();
+  const base = new THREE.Color();
+
+  for (let i = 0; i < position.count; i++) {
+    const y = getHeightAt(position.getX(i) + originX, position.getZ(i));
+    const finalY = GROUND_BASE_Y + y;
+    position.setY(i, finalY);
+    bakedHeights[i] = finalY;
+  }
+
+  // A fixed range (not each tile's own empirical min/max — see
+  // getHeightRange's comment) so the same raw height always maps to the
+  // same color on every tile, keeping the color gradient continuous
+  // across the scrolling seam between them.
+  const maxAmplitude = getHeightRange();
+  const range = maxAmplitude * 2;
+  for (let i = 0; i < position.count; i++) {
+    const x = position.getX(i) + originX;
+    const z = position.getZ(i);
+    const t = THREE.MathUtils.clamp((position.getY(i) - GROUND_BASE_Y + maxAmplitude) / range, 0, 1);
+    base.copy(LOW_COLOR).lerp(HIGH_COLOR, t);
+
+    const patch = THREE.MathUtils.clamp(getHeightAt(x, z, PATCH_PARAMS) * 0.5 + 0.5, 0, 1);
+    const patchWeight = Math.max(0, patch - 0.62) * 2.4;
+    color.copy(base).lerp(PATCH_COLOR, THREE.MathUtils.clamp(patchWeight, 0, 0.55));
+
+    colors[i * 3] = color.r;
+    colors[i * 3 + 1] = color.g;
+    colors[i * 3 + 2] = color.b;
+  }
+  geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+  // flatShading in three.js is fragment-derivative based (dFdx/dFdy),
+  // not a geometry requirement — the default smooth normals from
+  // PlaneGeometry are simply unused, so recomputing them is skipped.
+  position.needsUpdate = true;
+
+  return { geometry: geo, bakedHeights };
+}
+
+export const Ground = forwardRef<GroundHandle, GroundProps>(function Ground({ segments, originX = 0 }, forwardedRef) {
   const meshRef = useRef<THREE.Mesh>(null);
   const bakedHeightsRef = useRef<Float32Array>(new Float32Array(0));
+  const geometryRef = useRef<THREE.BufferGeometry | null>(null);
 
-  const geometry = useMemo(() => {
-    const geo = new THREE.PlaneGeometry(GROUND_SIZE, GROUND_SIZE, segments, segments);
-    geo.rotateX(-Math.PI / 2);
+  const initial = useMemo(() => bakeGeometry(segments, originX), [segments]);
+  if (!geometryRef.current) {
+    geometryRef.current = initial.geometry;
+    bakedHeightsRef.current = initial.bakedHeights;
+  }
 
-    const position = geo.getAttribute('position');
-    const colors = new Float32Array(position.count * 3);
-    const bakedHeights = new Float32Array(position.count);
-    const color = new THREE.Color();
-    const base = new THREE.Color();
-
-    for (let i = 0; i < position.count; i++) {
-      const y = getHeightAt(position.getX(i) + originX, position.getZ(i));
-      const finalY = GROUND_BASE_Y + y;
-      position.setY(i, finalY);
-      bakedHeights[i] = finalY;
-    }
-    bakedHeightsRef.current = bakedHeights;
-
-    // A fixed range (not each tile's own empirical min/max — see
-    // getHeightRange's comment) so the same raw height always maps to the
-    // same color on every tile, keeping the color gradient continuous
-    // across the scrolling seam between them.
-    const maxAmplitude = getHeightRange();
-    const range = maxAmplitude * 2;
-    for (let i = 0; i < position.count; i++) {
-      const x = position.getX(i) + originX;
-      const z = position.getZ(i);
-      const t = THREE.MathUtils.clamp((position.getY(i) - GROUND_BASE_Y + maxAmplitude) / range, 0, 1);
-      base.copy(LOW_COLOR).lerp(HIGH_COLOR, t);
-
-      const patch = THREE.MathUtils.clamp(getHeightAt(x, z, PATCH_PARAMS) * 0.5 + 0.5, 0, 1);
-      const patchWeight = Math.max(0, patch - 0.62) * 2.4;
-      color.copy(base).lerp(PATCH_COLOR, THREE.MathUtils.clamp(patchWeight, 0, 0.55));
-
-      colors[i * 3] = color.r;
-      colors[i * 3 + 1] = color.g;
-      colors[i * 3 + 2] = color.b;
-    }
-    geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-    // flatShading in three.js is fragment-derivative based (dFdx/dFdy),
-    // not a geometry requirement — the default smooth normals from
-    // PlaneGeometry are simply unused, so recomputing them is skipped.
-    position.needsUpdate = true;
-    return geo;
-  }, [segments, originX]);
+  useImperativeHandle(
+    forwardedRef,
+    () => ({
+      // Rebakes onto a brand-new geometry synchronously — called
+      // imperatively by InfiniteLandscape in the exact same frame tick as
+      // this tile's position jump at wrap. Baking via a React prop +
+      // useMemo dependency instead (the previous approach) only takes
+      // effect on the NEXT render, which left the tile's rendered
+      // position and its baked terrain pattern out of sync for at least
+      // one frame every wrap — a real, if brief, mismatch between two
+      // tiles' touching edges. That transient mismatch was exactly the
+      // visible seam being reported, not a flaw in the noise sampling
+      // itself (the origins invariant already guarantees the two tiles
+      // sample the same continuous noise field at their shared edge —
+      // see InfiniteLandscape.tsx).
+      rebake(nextOriginX: number) {
+        const mesh = meshRef.current;
+        if (!mesh) return;
+        const previous = geometryRef.current;
+        const next = bakeGeometry(segments, nextOriginX);
+        mesh.geometry = next.geometry;
+        geometryRef.current = next.geometry;
+        bakedHeightsRef.current = next.bakedHeights;
+        previous?.dispose();
+      },
+    }),
+    [segments],
+  );
 
   useFrame(() => {
     const mesh = meshRef.current;
     const parent = mesh?.parent;
-    if (!mesh || !parent) return;
+    const geo = geometryRef.current;
+    if (!mesh || !parent || !geo) return;
 
     const bakedHeights = bakedHeightsRef.current;
-    const position = geometry.getAttribute('position');
+    const position = geo.getAttribute('position');
     const parentWorldX = parent.position.x;
 
     for (let i = 0; i < position.count; i++) {
@@ -122,8 +163,8 @@ export function Ground({ segments, originX = 0 }: GroundProps) {
   });
 
   return (
-    <mesh ref={meshRef} geometry={geometry} receiveShadow={false}>
+    <mesh ref={meshRef} geometry={initial.geometry} receiveShadow={false}>
       <meshStandardMaterial vertexColors flatShading roughness={1} metalness={0} />
     </mesh>
   );
-}
+});
