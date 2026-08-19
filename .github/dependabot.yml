@@ -1,0 +1,22 @@
+version: 2
+updates:
+  # pnpm resolves under Dependabot's "npm" ecosystem key — there is no
+  # separate "pnpm" value (docs.github.com/en/code-security/dependabot/
+  # dependabot-version-updates/configuration-options-for-the-dependabot.yml-file).
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
+      semver-major-days: 21
+
+  # .github/workflows/deploy.yml pins actions/checkout, withastro/action, and
+  # actions/deploy-pages — the same cooldown applies to those version bumps.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
+      semver-major-days: 21

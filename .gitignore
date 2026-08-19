@@ -1,6 +1,15 @@
-# Claude Code working directory (local only)
-.claude/
-CLAUDE.md
+# Claude Code — this directory is TRACKED so repo-local agents, skills and
+# rules travel with the repo. Only machine-local and agent-written state is
+# held back. Do not invert this into a blanket ignore: an agent inside an
+# ignored directory never reaches a clone.
+.claude/settings.local.json
+.claude/worktrees/
+.claude/agent-memory-local/
+.claude/launch.json
+.claude/scheduled_tasks.json
+CLAUDE.local.md
+.claude/**/*.local.*
+.claude/**/*-local/
 
 # Internal development directory
 .local/
@@ -19,11 +28,42 @@ node_modules/
 .env.*
 !.env.example
 
+# package-registry auth — these carry registry tokens (`_authToken`,
+# `npmAuthIdent`). A committed .npmrc can also silently weaken install-time
+# supply-chain settings.
+.npmrc
+.yarnrc
+.yarnrc.yml
+
+# secrets & credentials
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ecdsa
+id_ed25519
+credentials.json
+service-account.json
+secrets/
+
+# blockchain & crypto
+keystore/
+*.keystore
+wallet.json
+mnemonic.txt
+
 # build output
 .next/
 out/
 dist/
 .astro/
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
 
 # OS
 .DS_Store
