@@ -100,12 +100,6 @@ Dependency changes are reviewed before they land; see Boundaries.
 
 ## Boundaries
 
-- Retired site versions (`static-site-v1/`, `v2/`, `v3/`) are deliberately not
-  tracked. Each was a snapshot of a state this repo's own git history already
-  holds, so keeping them in the working tree duplicated history. Recover one
-  with `git log -- archive/` and `git show` if it is ever needed. Do not
-  restore them into the tracked tree, and do not read their absence as work to
-  undo.
 - `public/CNAME`, `public/robots.txt`, `public/sitemap.xml`, and the SEO/social
   metadata in `src/layouts/Layout.astro` are live in production. Changing
   them changes what search engines and link previews show — ask first.

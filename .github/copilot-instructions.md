@@ -117,7 +117,4 @@ pnpm build   # Must succeed
 - Commit `.env` files or secrets (there are none checked in; keep it that way)
 - Add a dependency, or touch `package.json`/`tsconfig.json`/`astro.config.mjs`,
   without asking first
-- Restore the retired site versions (`static-site-v1/`, `v2/`, `v3/`) into the
-  tracked tree — they are untracked on purpose, and git history already holds
-  them
 - Add a `LICENSE`, or otherwise license this repo's content
