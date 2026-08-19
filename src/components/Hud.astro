@@ -1,4 +1,11 @@
 ---
+const projects = [
+  { name: 'Fukuii', domain: 'fukuii.org', href: 'https://fukuii.org' },
+  { name: 'Ethereum Classic', domain: 'ethereumclassic.com', href: 'https://ethereumclassic.com' },
+  { name: 'ETCswap', domain: 'etcswap.org', href: 'https://etcswap.org' },
+  { name: 'Classic USD', domain: 'classicusd.com', href: 'https://classicusd.com' },
+  { name: 'Olympia DAO', domain: 'olympiadao.org', href: 'https://olympiadao.org' },
+];
 ---
 
 <div class="hud">
@@ -9,7 +16,39 @@
     </button>
   </div>
   <div class="hud-corner top-right">
-    <span class="tag">BUILDING SINCE 2013</span>
+    <div class="portfolio">
+      <button
+        id="portfolio-trigger"
+        class="portfolio-trigger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="portfolio-menu"
+      >
+        PORTFOLIO
+        <svg class="chevron" viewBox="0 0 10 10" aria-hidden="true" focusable="false">
+          <path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+        </svg>
+      </button>
+      <div id="portfolio-menu" class="portfolio-menu">
+        <ul>
+          {
+            projects.map((project, i) => (
+              <li style={`--i:${i}`}>
+                <a href={project.href} target="_blank" rel="noopener noreferrer">
+                  <span class="project">
+                    <span class="project-name">{project.name}</span>
+                    <span class="project-domain">{project.domain}</span>
+                  </span>
+                  <svg class="external" viewBox="0 0 10 10" aria-hidden="true" focusable="false">
+                    <path d="M3 7 L7 3 M4 3 H7 V6" fill="none" stroke="currentColor" stroke-width="1.2" />
+                  </svg>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -42,8 +81,7 @@
     right: 1.5rem;
   }
 
-  .wordmark,
-  .tag {
+  .wordmark {
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -55,11 +93,10 @@
     border: 1px solid var(--border);
   }
 
-  .tag {
-    color: var(--text-secondary);
-  }
-
-  .learn-more {
+  /* One rule for both HUD buttons, so "Portfolio" cannot drift away from
+     "Learn More" the next time either is restyled. */
+  .learn-more,
+  .portfolio-trigger {
     pointer-events: auto;
     font-family: var(--font-mono);
     font-size: 0.6875rem;
@@ -73,14 +110,178 @@
     transition: background-color 0.15s ease, border-color 0.15s ease;
   }
 
-  .learn-more:hover {
+  .learn-more:hover,
+  .portfolio-trigger:hover {
     background: var(--accent-cyan);
     border-color: var(--accent-cyan);
   }
 
-  .learn-more:focus-visible {
+  .learn-more:focus-visible,
+  .portfolio-trigger:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
+  }
+
+  .portfolio {
+    position: relative;
+    pointer-events: auto;
+  }
+
+  .portfolio-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4375rem;
+  }
+
+  .chevron {
+    width: 0.5rem;
+    height: 0.5rem;
+    stroke-linecap: square;
+    transition: transform 0.18s ease;
+  }
+
+  .portfolio-trigger[aria-expanded='true'] .chevron {
+    transform: rotate(180deg);
+  }
+
+  .portfolio-menu {
+    position: absolute;
+    top: calc(100% + 0.375rem);
+    right: 0;
+    min-width: 15rem;
+    max-width: calc(100vw - 3rem);
+    background: var(--panel-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--border);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.375rem);
+    transition:
+      opacity 0.18s ease,
+      transform 0.18s ease,
+      visibility 0s linear 0.18s;
+  }
+
+  .portfolio-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition:
+      opacity 0.18s ease,
+      transform 0.18s ease,
+      visibility 0s;
+  }
+
+  .portfolio-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .portfolio-menu li + li {
+    border-top: 1px solid var(--border);
+  }
+
+  .portfolio-menu a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.625rem 0.875rem;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+  }
+
+  /* The accent bar is the hover affordance rather than a fill, so the menu
+     keeps the thin-rule HUD language instead of turning into a solid block. */
+  .portfolio-menu a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--accent-cyan);
+    transform: scaleY(0);
+    transition: transform 0.15s ease;
+  }
+
+  .portfolio-menu a:hover,
+  .portfolio-menu a:focus-visible {
+    background: rgba(192, 132, 252, 0.09);
+    outline: none;
+  }
+
+  .portfolio-menu a:hover::before,
+  .portfolio-menu a:focus-visible::before {
+    transform: scaleY(1);
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1875rem;
+    min-width: 0;
+  }
+
+  .project-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .portfolio-menu a:hover .project-name,
+  .portfolio-menu a:focus-visible .project-name {
+    color: var(--accent-cyan);
+  }
+
+  .project-domain {
+    font-size: 0.625rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+
+  .external {
+    width: 0.5rem;
+    height: 0.5rem;
+    flex-shrink: 0;
+    color: var(--text-secondary);
+    stroke-linecap: square;
+    transition: color 0.15s ease;
+  }
+
+  .portfolio-menu a:hover .external,
+  .portfolio-menu a:focus-visible .external {
+    color: var(--accent-cyan);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .portfolio-menu li {
+      opacity: 0;
+      transform: translateY(-0.25rem);
+      transition:
+        opacity 0.16s ease,
+        transform 0.16s ease;
+    }
+
+    .portfolio-menu.is-open li {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: calc(var(--i) * 28ms);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .chevron,
+    .portfolio-menu {
+      transition-duration: 0s;
+    }
   }
 
   @media (max-width: 560px) {
@@ -89,8 +290,15 @@
       align-items: flex-start;
       gap: 0.5rem;
     }
-    .top-right {
-      display: none;
+  }
+
+  /* Once the top-left stack goes vertical the wordmark shares row one with
+     the Portfolio button. Tightening it keeps the name on screen at the
+     common phone widths, where hiding it would drop the branding instead. */
+  @media (max-width: 480px) {
+    .wordmark {
+      letter-spacing: 0.06em;
+      padding: 0.5rem 0.5rem;
     }
   }
 </style>
@@ -99,5 +307,77 @@
   const learnMoreTrigger = document.getElementById('learn-more-trigger') as HTMLButtonElement;
   learnMoreTrigger.addEventListener('click', () => {
     document.dispatchEvent(new CustomEvent('learnmore:open'));
+  });
+
+  const portfolio = document.querySelector('.portfolio') as HTMLDivElement;
+  const portfolioTrigger = document.getElementById('portfolio-trigger') as HTMLButtonElement;
+  const portfolioMenu = document.getElementById('portfolio-menu') as HTMLDivElement;
+  const links = Array.from(portfolioMenu.querySelectorAll('a'));
+
+  function isOpen() {
+    return portfolioTrigger.getAttribute('aria-expanded') === 'true';
+  }
+
+  function openMenu() {
+    portfolioTrigger.setAttribute('aria-expanded', 'true');
+    portfolioMenu.classList.add('is-open');
+  }
+
+  function closeMenu(refocus = false) {
+    portfolioTrigger.setAttribute('aria-expanded', 'false');
+    portfolioMenu.classList.remove('is-open');
+    if (refocus) portfolioTrigger.focus();
+  }
+
+  portfolioTrigger.addEventListener('click', () => {
+    isOpen() ? closeMenu() : openMenu();
+  });
+
+  // Opening the Learn More panel covers the HUD; leaving the menu expanded
+  // behind it would restore it still open on close.
+  document.addEventListener('learnmore:open', () => closeMenu());
+
+  document.addEventListener('pointerdown', (e) => {
+    if (isOpen() && !portfolio.contains(e.target as Node)) closeMenu();
+  });
+
+  portfolioTrigger.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+      if (!isOpen()) {
+        e.preventDefault();
+        openMenu();
+        links[0]?.focus();
+      }
+    }
+  });
+
+  portfolioMenu.addEventListener('keydown', (e) => {
+    const i = links.indexOf(document.activeElement as HTMLAnchorElement);
+    if (i === -1) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      links[(i + 1) % links.length].focus();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      links[(i - 1 + links.length) % links.length].focus();
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      links[0].focus();
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      links[links.length - 1].focus();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen()) closeMenu(true);
+  });
+
+  // Tabbing past the last link, or clicking away, should not leave it open.
+  portfolio.addEventListener('focusout', () => {
+    requestAnimationFrame(() => {
+      if (isOpen() && !portfolio.contains(document.activeElement)) closeMenu();
+    });
   });
 </script>
