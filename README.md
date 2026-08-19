@@ -1,6 +1,6 @@
 ### Christopher Mercer
 
-**Technical Product · Institutional Digital Assets**
+**Blockchain Engineer · Institutional Digital Assets**
 
 ---
 
