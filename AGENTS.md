@@ -111,5 +111,10 @@ Dependency changes are reviewed before they land; see Boundaries.
   them changes what search engines and link previews show — ask first.
 - Ask before adding a dependency, or changing `package.json`, `tsconfig.json`,
   or `astro.config.mjs`.
-- This repo is MIT-licensed — a deliberate choice. Do not change `LICENSE` or
-  suggest a different license.
+- This repo carries **no license**, deliberately. The copy, CV content, and
+  bespoke WebGL scene are copyrighted work that happens to be public —
+  publishing something is not licensing it, and all rights are reserved. Do not
+  add a `LICENSE`, do not suggest one, and do not treat a community-standards
+  checker flagging its absence as a defect. Unrelated and unaffected: the
+  third-party model under `public/models/` is CC0 and keeps its attribution in
+  `CREDITS.md`, which stays.

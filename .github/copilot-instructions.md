@@ -61,8 +61,9 @@ Ask before modifying:
 - `package.json`, `pnpm-lock.yaml`
 - `tsconfig.json`, `astro.config.mjs`
 - `public/CNAME`, `public/robots.txt`, `public/sitemap.xml`
-- `LICENSE` — MIT, a deliberate choice; do not change it or suggest a
-  different license
+- There is deliberately **no `LICENSE`** — all rights reserved. Do not add one,
+  and do not report its absence as a defect. The CC0 attribution for the
+  third-party model in `public/models/CREDITS.md` is unrelated and stays
 
 ## Structure
 
@@ -119,4 +120,4 @@ pnpm build   # Must succeed
 - Restore the retired site versions (`static-site-v1/`, `v2/`, `v3/`) into the
   tracked tree — they are untracked on purpose, and git history already holds
   them
-- Change the license
+- Add a `LICENSE`, or otherwise license this repo's content
