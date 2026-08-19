@@ -96,8 +96,11 @@ const description =
       rel="stylesheet"
     />
 
-    <!-- Cloudflare Web Analytics -->
+    <!-- Cloudflare Web Analytics. is:inline is explicit rather than implied:
+         Astro already treats a script carrying attributes as inline, and
+         saying so keeps `astro check` quiet so a real hint stands out. -->
     <script
+      is:inline
       defer
       src="https://static.cloudflareinsights.com/beacon.min.js"
       data-cf-beacon={JSON.stringify({ token: '436f0695eef84251ad68820649bd8530' })}
