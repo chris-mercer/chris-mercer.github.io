@@ -80,22 +80,23 @@ exception) or credentials regardless.
 
 ## Dependencies
 
-`.github/dependabot.yml` configures weekly version updates for two ecosystems:
-`npm`, which is the key pnpm resolves under (Dependabot has no separate `pnpm`
-value), and `github-actions`, for the three actions pinned in
-`.github/workflows/deploy.yml`. Both carry a 7-day cooldown, 21 days for
-majors, so a freshly published version is not proposed until it has been public
-long enough for a compromised release to surface.
+Automated dependency updates are deliberately off. `.github/dependabot.yml`
+carries `open-pull-requests-limit: 0`, and Dependabot security alerts are
+disabled at the repository level. Both are decisions, not oversights: this is a
+static site with a small, stable dependency set and no backend, and a weekly
+stream of update PRs would cost more attention than it buys. Do not enable
+either as a fix, and do not read the absent cooldown block as a missing
+control — it would gate nothing while the limit is zero, and goes in at the
+moment the limit is raised.
 
-That cooldown gates *version* updates. The immediate-security-patch path is a
-separate repository setting rather than anything this file controls, and on
-this repo it is **off** — `GET /repos/{owner}/{repo}/vulnerability-alerts`
-returned "Vulnerability alerts are disabled" on 2026-08-19. So the config above
-currently delivers scheduled version updates and nothing else. Re-check rather
-than trusting this sentence; turning alerts on is an operator decision, not a
-change to `dependabot.yml`.
+The control that is actually in force is install-time rather than PR-time: the
+maintainer's package manager refuses to resolve anything published within the
+last 7 days, which is the window a compromised release is typically caught in.
+Nothing bypasses that gate, a security advisory included. It lives in the
+maintainer's environment rather than in this repo, so a clone does not inherit
+it — set an equivalent before installing if you are working from one.
 
-Ask before adding, removing, or upgrading a dependency — see Boundaries.
+Dependency changes are reviewed before they land; see Boundaries.
 
 ## Boundaries
 

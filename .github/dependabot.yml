@@ -1,22 +1,33 @@
+# Dependabot version updates are deliberately OFF for this repo.
+#
+# This is a static personal site with a small, stable dependency set and no
+# backend, so a weekly stream of update PRs costs more attention than it buys.
+# Dependabot security alerts are switched off at the repository level for the
+# same reason, and that is a decision rather than an oversight — do not enable
+# either as a "fix".
+#
+# The control that is actually in force is install-time: the maintainer's pnpm
+# config refuses to resolve any package published within the last 7 days, which
+# is the window supply-chain compromises are caught in. That gate applies to
+# every install here and nothing bypasses it, including a security advisory.
+#
+# open-pull-requests-limit: 0 is GitHub's documented way to hold version
+# updates off while keeping a configured, reviewable file — `updates:` is a
+# required key with no empty form, so the entry below names the ecosystem this
+# repo would use rather than being deleted outright.
+#
+# To turn version updates back on: raise the limit, and add the cooldown block
+# at the same moment (default-days: 7, semver-major-days: 21). No cooldown is
+# configured while the limit is zero, because a setting that gates nothing
+# still reads like a control that is operating.
+#
+# pnpm resolves under the "npm" ecosystem key — there is no separate "pnpm"
+# value (docs.github.com/en/code-security/dependabot/
+# dependabot-version-updates/configuration-options-for-the-dependabot.yml-file).
 version: 2
 updates:
-  # pnpm resolves under Dependabot's "npm" ecosystem key — there is no
-  # separate "pnpm" value (docs.github.com/en/code-security/dependabot/
-  # dependabot-version-updates/configuration-options-for-the-dependabot.yml-file).
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
-    cooldown:
-      default-days: 7
-      semver-major-days: 21
-
-  # .github/workflows/deploy.yml pins actions/checkout, withastro/action, and
-  # actions/deploy-pages — the same cooldown applies to those version bumps.
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    cooldown:
-      default-days: 7
-      semver-major-days: 21
+    open-pull-requests-limit: 0

@@ -90,14 +90,17 @@ revert and a rebuild, not a rollback event.
 
 ## Dependencies
 
-`.github/dependabot.yml` runs weekly version updates for `npm` (the key pnpm
-resolves under — there is no separate `pnpm` value) and `github-actions`, both
-with a 7-day cooldown and 21 days for majors.
+Automated dependency updates are deliberately off — `.github/dependabot.yml`
+sets `open-pull-requests-limit: 0`, and Dependabot security alerts are disabled
+at the repository level. Both are decisions for a small static site, not
+oversights. Do not enable either, and do not add a cooldown block while the
+limit is zero.
 
-That cooldown gates version updates only. The immediate-security-patch path is
-a repository setting, and on this repo it is off — the API reported
-vulnerability alerts disabled on 2026-08-19. Re-check rather than trusting this
-sentence.
+The real control is install-time: the maintainer's package manager will not
+resolve a package published in the last 7 days, and nothing bypasses that. It
+is environment-level rather than in-repo, so a clone does not inherit it.
+
+Never add, remove, or upgrade a dependency without asking.
 
 ## Validation
 
